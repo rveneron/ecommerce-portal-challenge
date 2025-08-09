@@ -30,14 +30,15 @@ const monserrat = Montserrat({
   display: 'swap'
 });
 
+const PUBLIC_APP_URL = process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000';
+
 export const metadata: Metadata = {
-  metadataBase: new URL(`${process.env.NEXT_PUBLIC_APP_URL}`),
-  title: process.env.NEXT_PUBLIC_STORE_NAME_SEO || 'Ecommerce platform',
-  description: process.env.NEXT_PUBLIC_STORE_DESCRIPTION_SEO || 'Ecommerce platform',
+  metadataBase: new URL(PUBLIC_APP_URL),
+  title: process.env.NEXT_PUBLIC_NAME_SEO || 'Ecommerce platform',
+  description: process.env.NEXT_PUBLIC_DESCRIPTION_SEO || 'Ecommerce platform',
   alternates: {
-    canonical: new URL(`${process.env.NEXT_PUBLIC_APP_URL}/es`),
+    canonical: new URL(PUBLIC_APP_URL),
     languages: {
-      'en-US': '/en-US',
       'es-ES': '/es-ES'
     }
   },
@@ -52,10 +53,9 @@ export const metadata: Metadata = {
   }
 };
 
-export function generateStaticParams(params: Record<string, string>) {
+export function generateStaticParams(_params: Record<string, string>) {
   return i18nConfig.locales.map((locale) => ({
-    locale,
-    region: params?.region || process.env.NEXT_PUBLIC_DEFAULT_REGION || 'hab'
+    locale
   }));
 }
 

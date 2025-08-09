@@ -1,11 +1,11 @@
 'use client';
 
 import { useEffect } from 'react';
-import { Poppins } from 'next/font/google';
+import { Inter } from 'next/font/google';
 import ServerErrorLayout from '@/components/core/errors/server-error-layout';
 import { cn } from '@/lib/utils';
 
-const poppins = Poppins({
+const inter = Inter({
   weight: ['300', '400', '500', '600', '700'],
   style: ['normal', 'italic'],
   fallback: ['sans-serif'],
@@ -27,7 +27,7 @@ export default function GlobalError({
 
   return (
     <html lang="en">
-      <body className={cn(poppins.className)}>
+      <body className={cn(inter.className)}>
         <main>
           <ServerErrorLayout reset={reset} />
         </main>

@@ -1,0 +1,21 @@
+.container {
+  min-height: 140px;
+  box-shadow: 0 4px 4px rgba(167, 195, 236, 0.25);
+}
+
+.container :global(.header) {
+  min-height: 100px;
+  background: #fff;
+}
+
+.container :global(.menu) {
+    min-height: 48px;
+    @apply bg-primary
+}
+
+@media (min-width: 1200px) {
+  .container {
+    min-height: 150px;
+    box-shadow: none;
+  }
+}
