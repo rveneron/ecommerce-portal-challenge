@@ -14,6 +14,10 @@
     "contacts": {
       "phone": "Lunes a viernes: 08 a.m a 9 p.m.",
       "email": "¿Necesitas ayuda con tu pedido?"
+    },
+    "termsAndPolicies": {
+      "part1": "Al suscribirte aceptas nuestros ",
+      "part2": "Términos y condiciones y Política de privacidad y cookies."
     }
   }
 }

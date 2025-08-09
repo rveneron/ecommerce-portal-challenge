@@ -27,6 +27,7 @@
   background: #fff;
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
   border: none !important;
+  margin-bottom: 12px;
 }
 
 .container :global(.email-input .input) {
@@ -42,7 +43,20 @@
 .container :global(.email-input .send-button) {
   background: #e79f00;
   border-radius: 0 30px 30px 0;
-    min-width: 100px;
+  min-width: 100px;
+}
+
+.container :global(.terms) {
+  color: #fff;
+  font-family: Inter, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 19px;
+}
+
+.container :global(.terms a) {
+    color: #E79F00;
+    text-decoration: underline;
 }
 
 .container :global(.subscription-subtitle) {
