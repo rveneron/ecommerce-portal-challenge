@@ -2,7 +2,6 @@ import React from 'react';
 import { cn } from '@/lib/utils';
 import styles from './styles.module.css';
 import { ClassNameProps } from '@/types/classnames-props.type';
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { mainMenu } from '@/data/home-menu';
 import Link from 'next/link';
 import { TProps } from '@/types/t-props.type';

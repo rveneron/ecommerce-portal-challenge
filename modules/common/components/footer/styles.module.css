@@ -1,0 +1,70 @@
+.container {
+  @apply bg-primary;
+  padding: 40px 20px;
+}
+
+.container :global(.subscription-container) {
+  @apply flex flex-col items-stretch justify-between gap-5;
+  margin-bottom: 60px;
+}
+
+.container :global(.subscription-title) {
+  color: #fff;
+  font-family: Montserrat, sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+  line-height: normal;
+  max-width: 340px;
+  margin-bottom: 4px;
+}
+
+.container :global(.email-input) {
+  min-height: 48px;
+  width: 100%;
+  max-width: 420px;
+  border-radius: 30px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  border: none !important;
+}
+
+.container :global(.email-input .input) {
+  background: transparent;
+}
+
+.container :global(.email-input .input:focus) {
+  border: none !important;
+  outline: none !important;
+  @apply ring-transparent;
+}
+
+.container :global(.email-input .send-button) {
+  background: #e79f00;
+  border-radius: 0 30px 30px 0;
+    min-width: 100px;
+}
+
+.container :global(.subscription-subtitle) {
+  color: #fff;
+  font-family: Montserrat, sans-serif;
+  font-size: 13px;
+  font-weight: 300;
+  line-height: 20px;
+  max-width: 420px;
+}
+
+.container :global(.contacts) {
+  @apply flex flex-wrap gap-x-8 gap-y-4;
+}
+
+@media (min-width: 960px) {
+  .container :global(.subscription-container) {
+    @apply flex-row;
+    margin-bottom: 70px;
+  }
+
+  .container :global(.email-input) {
+    width: 420px;
+  }
+}

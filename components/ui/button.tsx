@@ -152,7 +152,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         )}
         disabled={disabled}
         ref={ref}
-        onClick={variant === 'outline' ? handleRipple : undefined} // Only add ripple for outline variant
+        onClick={variant === 'outline' ? handleRipple : undefined} // Only add ripple for the outline variant
         {...props}
       >
         <div

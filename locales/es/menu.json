@@ -5,5 +5,15 @@
     "deliveries": "Entregas",
     "payments": "Pagos",
     "faqs": "Preguntas frecuentes"
+  },
+  "footer": {
+    "subscription": {
+      "title": "Subscríbete aquí para conocer más de nuestras ofertas",
+      "subtitle": "Regístrese ahora para recibir las últimas actualizaciones sobre promociones y cupones. ¡No te preocupes, no enviamos spam!"
+    },
+    "contacts": {
+      "phone": "Lunes a viernes: 08 a.m a 9 p.m.",
+      "email": "¿Necesitas ayuda con tu pedido?"
+    }
   }
 }

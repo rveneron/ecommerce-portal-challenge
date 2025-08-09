@@ -4,6 +4,7 @@ import initTranslations from '@/i18n';
 import { ChildrenProps } from '@/types/children-props.type';
 import TranslationsProvider from '@/context/translation-provider';
 import Navbar from '@/modules/common/components/navbar/navbar.component';
+import Footer from '@/modules/common/components/footer/footer.component';
 
 export const metadata: Metadata = {
   title: process.env.NEXT_PUBLIC_STORE_NAME_SEO || 'Botifarma',
@@ -40,16 +41,7 @@ export default async function RootLayout({ children, params }: Readonly<Props>) 
       >
         <Navbar t={t} />
         {children}
-        {/*<NavbarWrapper>
-          <TopNavbar categories={data || []} locale={dynamicParams?.locale} region={cookieRegion} />
-        </NavbarWrapper>*/}
-
-        {/*<div className="z-10 flex items-center justify-center bg-white px-4 lg:hidden">
-          <Suspense fallback={<SkeletonSearchBar />}>
-            <MobileSearchBar categories={data || []} />
-          </Suspense>
-        </div>*/}
-        {/*<Footer t={t} />*/}
+        <Footer t={t} />
       </TranslationsProvider>
     </main>
   );

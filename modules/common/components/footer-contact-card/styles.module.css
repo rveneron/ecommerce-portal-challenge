@@ -1,0 +1,37 @@
+.container {
+  @apply flex flex-row items-center justify-start gap-x-4;
+}
+
+.container :global(.contact-data) {
+  @apply flex flex-col gap-1;
+}
+
+.container :global(.contact-title) {
+  color: #fff;
+  font-family: Montserrat, sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 18px;
+  opacity: 0.6;
+}
+
+.container :global(.phone-value) {
+  color: #fff;
+  font-family: Montserrat, sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 30px;
+}
+
+.container :global(.email-value) {
+  color: #fff;
+  font-family: Montserrat, sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 21px;
+}
+
+@media (min-width: 600px) {
+  .container {
+  }
+}
