@@ -5,9 +5,7 @@
     "plugin:storybook/recommended",
     "prettier"
   ],
-  "plugins": [
-    "unicorn"
-  ],
+  "plugins": ["unicorn"],
   "rules": {
     "@typescript-eslint/no-explicit-any": "off",
     "no-unused-vars": [

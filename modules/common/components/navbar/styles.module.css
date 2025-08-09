@@ -1,21 +1,51 @@
 .container {
   min-height: 140px;
+  background: #fff;
   box-shadow: 0 4px 4px rgba(167, 195, 236, 0.25);
+  padding: 0 16px;
 }
 
 .container :global(.header) {
   min-height: 100px;
   background: #fff;
+  @apply flex items-center justify-between gap-4;
+}
+
+.container :global(.username) {
+  color: #2b3445;
+  font-family: Inter, sans-serif;
+  font-size: 28px;
+  font-weight: bold;
 }
 
 .container :global(.menu) {
-    min-height: 48px;
-    @apply bg-primary
+  @apply relative hidden bg-primary text-white;
+}
+
+.container :global(.menu-container) {
+  @apply flex h-full w-full flex-row items-center gap-[30px];
+  min-height: 48px;
+}
+
+.container :global(.menu-item:hover) {
+  text-decoration: underline;
 }
 
 @media (min-width: 1200px) {
   .container {
     min-height: 150px;
     box-shadow: none;
+    padding: 0;
+  }
+
+  .container :global(.username) {
+    color: #2b3445;
+    font-family: Inter, sans-serif;
+    font-size: 33px;
+    font-weight: bold;
+  }
+
+  .container :global(.menu) {
+    @apply block;
   }
 }
