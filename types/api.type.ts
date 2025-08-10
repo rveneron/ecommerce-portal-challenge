@@ -1,5 +1,5 @@
 export type ErrorApiResponse = {
-  error: any;
+  error: unknown;
   data?: null;
 };
 

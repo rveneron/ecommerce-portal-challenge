@@ -34,8 +34,8 @@ const PUBLIC_APP_URL = process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000
 
 export const metadata: Metadata = {
   metadataBase: new URL(PUBLIC_APP_URL),
-  title: process.env.NEXT_PUBLIC_NAME_SEO || 'Ecommerce platform',
-  description: process.env.NEXT_PUBLIC_DESCRIPTION_SEO || 'Ecommerce platform',
+  title: 'Botifarma',
+  description: 'Botifarma Store',
   alternates: {
     canonical: new URL(PUBLIC_APP_URL),
     languages: {
