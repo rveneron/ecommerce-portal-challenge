@@ -36,9 +36,9 @@ export default async function Home({ params }: Readonly<Props>) {
       <PageWidthContainer className={'mb-[70px]'}>
         <AdsList ads={secondaryAdsResponse?.data?.data || []} />
       </PageWidthContainer>
-      <PageWidthContainer className={'px-0'}>
+      <PageWidthContainer className={'max-sm:px-0'}>
         <SafeCarefullyBanner
-          className={'mb-[200px] xl:mb-[70px]'}
+          className={'mb-[200px] mx-[20px] xl:mb-[70px] sm:mx-0'}
           t={t}
           discount={'-20%'}
           products={productsResponse?.data?.data || []}
