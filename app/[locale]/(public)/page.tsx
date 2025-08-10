@@ -6,6 +6,7 @@ import DrugStoreBanner from '@/modules/home/components/drug-store-banner/drug-st
 import initTranslations from '@/i18n';
 import SafeCarefullyBanner from '@/modules/home/components/safe-carefully-banner/safe-carefully-banner.component';
 import { getSaveProducts } from '@/modules/common/services/products';
+import OnePlaceSection from '@/modules/home/components/one-place-section/one-place-section.component';
 
 type Props = {
   params: Promise<{ locale: string }>;
@@ -35,12 +36,14 @@ export default async function Home({ params }: Readonly<Props>) {
       <PageWidthContainer className={'mb-[70px]'}>
         <AdsList ads={secondaryAdsResponse?.data?.data || []} />
       </PageWidthContainer>
-      <PageWidthContainer className={'mb-[200px] xl:mb-[70px]'}>
+      <PageWidthContainer className={'px-0'}>
         <SafeCarefullyBanner
+          className={'mb-[200px] xl:mb-[70px]'}
           t={t}
           discount={'-20%'}
           products={productsResponse?.data?.data || []}
         />
+        <OnePlaceSection t={t} />
       </PageWidthContainer>
     </div>
   );

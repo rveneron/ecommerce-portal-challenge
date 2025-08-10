@@ -1,0 +1,55 @@
+.container {
+  overflow: hidden;
+  @apply flex flex-col items-stretch justify-stretch;
+  gap: 20px;
+}
+
+.container :global(.image-section) {
+}
+
+.container :global(.data-section) {
+  padding: 20px;
+}
+
+.container :global(.data-section .title) {
+  @apply text-primary;
+  font-family: Montserrat, sans-serif;
+  font-size: 42px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 117%;
+  max-width: 390px;
+}
+
+.container :global(.data-section .subtitle) {
+  margin-top: 16px;
+  margin-bottom: 24px;
+  color: #676767;
+  font-family: Montserrat, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  max-width: 390px;
+}
+
+@media (min-width: 600px) {
+  .container :global(.image-section) {
+  }
+
+  .container :global(.data-section) {
+  }
+}
+
+@media (min-width: 960px) {
+  .container {
+    @apply flex-row items-center;
+    gap: 70px;
+  }
+
+  .container :global(.image-section) {
+    @apply flex-1;
+  }
+
+  .container :global(.data-section) {
+    @apply flex-1;
+  }
+}

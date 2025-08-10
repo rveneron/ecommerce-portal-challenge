@@ -14,5 +14,10 @@
       "part1": "Aprovechas las ofertas que tenemos este mes. ",
       "part2": "Revisar ofertas"
     }
+  },
+  "allPlace": {
+    "title": "Encuentra todo en un solo lugar",
+    "subtitle": "Medicamentos, suplementos, vitaminas, analgésicos y antiinflamatorios, cuidado personal y mucho más.",
+    "action": "Explorar productos"
   }
 }

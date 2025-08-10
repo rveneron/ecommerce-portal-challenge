@@ -62,6 +62,14 @@
     @apply bg-background text-foreground;
     background: #e9eef8;
   }
+
+  .bg-btn-primary {
+    background: #264092;
+  }
+
+  .bg-btn-primary:hover {
+    background: #121f4d;
+  }
 }
 
 @keyframes ripple {

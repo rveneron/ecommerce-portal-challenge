@@ -9,7 +9,7 @@ type Props = {
   imgRight?: string;
   sizesRight?: string;
   imgRightClass?: string;
-  loading?: 'eager' | 'lazy' | undefined;
+  loading?: 'eager' | 'lazy';
   priority?: boolean;
 };
 

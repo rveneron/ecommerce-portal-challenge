@@ -33,7 +33,7 @@ const DrugStoreBanner = ({ className, t }: Props) => {
         <div className="store-trust-title">{t('common:drugStoreTrust.title')}</div>
         <div className="store-trust-subtitle">
           <span>{t('common:drugStoreTrust.subtitle.part1')}</span>
-          <Link href={'/catalogo'}>{t('common:drugStoreTrust.subtitle.part2')}</Link>
+          <Link href={'/catalog'}>{t('common:drugStoreTrust.subtitle.part2')}</Link>
         </div>
       </div>
     </div>
