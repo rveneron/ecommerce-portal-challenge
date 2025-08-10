@@ -12,6 +12,7 @@ type Props = ClassNameProps & {
 const CategoryCard = ({ className, category }: Props) => {
   return (
     <div className={cn(styles.container, className)}>
+      <div className="semicircle"></div>
       {getCategoryIcon(category)}
       <div className={'category-name'}>{category.name}</div>
     </div>

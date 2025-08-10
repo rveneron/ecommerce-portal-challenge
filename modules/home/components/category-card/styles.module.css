@@ -9,7 +9,50 @@
   justify-content: center;
   background: #dadff2;
   border-radius: 10px;
+  gap: 10px;
+  overflow: hidden;
+  cursor: pointer;
 }
 
-.container :global(.image-container) {
+.container :global(svg) {
+  color: #264092;
+}
+
+.container :global(.category-name) {
+  color: #000;
+  text-align: center;
+  font-family: Montserrat, sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+}
+
+.container:hover {
+  background: #fff;
+}
+
+.container:hover :global(svg) {
+  color: #e79f00;
+  z-index: 2;
+}
+
+.container:hover :global(.category-name) {
+  color: #e79f00;
+}
+
+.container :global(.semicircle) {
+  width: 100px;
+  height: 100px;
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translate(50%, -50%);
+  border-radius: 50%;
+  background: #e79f00;
+  border: 8px solid #f2c57d;
+  display: none;
+}
+
+.container:hover :global(.semicircle) {
+  display: flex;
 }

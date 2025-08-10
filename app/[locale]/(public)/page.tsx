@@ -30,19 +30,19 @@ export default async function Home({ params }: Readonly<Props>) {
         className={'page-width-container mb-[55px]'}
       />
       <PageWidthContainer className={'mb-[70px]'}>
-        <CategoryList categories={categoriesResponse?.data?.data || []} className={'mb-[20px]'} />
-        <DrugStoreBanner t={t} />
+        <CategoryList categories={categoriesResponse?.data?.data || []} t={t} />
+        <DrugStoreBanner t={t} className={'mt-[20px] xl:mt-[10px]'} />
       </PageWidthContainer>
       <PageWidthContainer className={'mb-[70px]'}>
         <AdsList ads={secondaryAdsResponse?.data?.data || []} />
       </PageWidthContainer>
       <PageWidthContainer className={'max-sm:px-0'}>
-        {/*<SafeCarefullyBanner
+        <SafeCarefullyBanner
           className={'mx-[20px] mb-[200px] sm:mx-0 xl:mb-[70px]'}
           t={t}
           discount={'-20%'}
           products={productsResponse?.data?.data || []}
-        />*/}
+        />
         <OnePlaceSection t={t} />
       </PageWidthContainer>
     </div>

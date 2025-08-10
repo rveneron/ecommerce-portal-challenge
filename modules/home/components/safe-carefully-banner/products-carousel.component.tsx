@@ -7,7 +7,8 @@ import { IProduct } from '@/interfaces/product';
 import Image from 'next/image';
 import { FALL_BACK_IMAGE } from '@/constants';
 import Link from 'next/link';
-import './product-carousel.css';
+import styles from './product-carousel.module.css';
+import { cn } from '@/lib/utils';
 
 type Props = {
   products: IProduct[];
@@ -20,7 +21,7 @@ const SmallProductsCarousel: React.FC<Props> = ({ products, options }) => {
   const { selectedIndex, scrollSnaps, onDotButtonClick } = useDotButton(emblaApi);
 
   return (
-    <section className="embla">
+    <section className={cn(styles.container)}>
       <div className="embla__viewport" ref={emblaRef}>
         <div className="embla__container">
           {products.map((product, index) => (

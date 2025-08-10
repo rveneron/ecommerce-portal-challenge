@@ -4,7 +4,6 @@ import { EmblaOptionsType } from 'embla-carousel';
 import { DotButton, useDotButton } from './carousel-dots-butons.component';
 import { PrevButton, NextButton, usePrevNextButtons } from './carousel-arrow-butons.component';
 import useEmblaCarousel from 'embla-carousel-react';
-import './carousel.css';
 import { ClassNameProps } from '@/types/classnames-props.type';
 import { cn } from '@/lib/utils';
 
