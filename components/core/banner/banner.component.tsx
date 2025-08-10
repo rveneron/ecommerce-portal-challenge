@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 import { ClassNameProps } from '@/types/classnames-props.type';
 import Image from 'next/image';
 import { IBanner } from '@/interfaces/media.interface';
@@ -8,47 +8,47 @@ import { ChildrenProps } from '@/types/children-props.type';
 
 type Props = ClassNameProps & {
   banner: IBanner;
-  breakpoint?: string;
   desktopClassName?: string;
   mobileClassName?: string;
 };
 
-type WrapperProps = ChildrenProps & {
-  banner: IBanner;
-};
+type WrapperProps = ChildrenProps &
+  ClassNameProps & {
+    banner: IBanner;
+  };
 
-const WrapperComponent = ({ banner, children }: WrapperProps) => {
+const WrapperComponent = ({ banner, children, className }: WrapperProps) => {
   if (banner.link) {
-    return <Link href={banner.link}>{children}</Link>;
+    return (
+      <Link href={banner.link} className={cn('block', className)}>
+        {children}
+      </Link>
+    );
   }
 
   return <>{children}</>;
 };
 
-const Banner = ({
-  className,
-  desktopClassName,
-  mobileClassName,
-  banner,
-  breakpoint = 'md'
-}: Props) => {
+const Banner = ({ className, desktopClassName, mobileClassName, banner }: Props) => {
   if (banner?.desktop?.url && banner?.mobile?.url) {
     return (
-      <WrapperComponent banner={banner}>
-        <Image
-          alt={banner?.name || ''}
-          src={banner?.mobile?.url}
-          width={banner?.mobile?.width}
-          height={banner?.mobile?.height}
-          className={cn(className, mobileClassName, `${breakpoint}:hidden`)}
-        />
-        <Image
-          alt={banner?.name || ''}
-          src={banner?.desktop?.url}
-          width={banner?.desktop?.width}
-          height={banner?.desktop?.height}
-          className={cn(className, desktopClassName, `hidden ${breakpoint}:block`)}
-        />
+      <WrapperComponent banner={banner} className={className}>
+        <div>
+          <Image
+            alt={banner?.name || ''}
+            src={banner?.mobile?.url}
+            width={banner?.mobile?.width}
+            height={banner?.mobile?.height}
+            className={cn('md:hidden', mobileClassName)}
+          />
+          <Image
+            alt={banner?.name || ''}
+            src={banner?.desktop?.url}
+            width={banner?.desktop?.width}
+            height={banner?.desktop?.height}
+            className={cn('hidden md:block', desktopClassName)}
+          />
+        </div>
       </WrapperComponent>
     );
   }
@@ -61,7 +61,7 @@ const Banner = ({
           src={(banner?.desktop?.url || banner?.mobile?.url) as string}
           width={banner?.desktop ? banner?.desktop?.width : banner?.mobile?.width}
           height={banner?.desktop ? banner?.desktop?.height : banner?.mobile?.height}
-          className={cn(className, banner?.desktop?.url ? desktopClassName : mobileClassName)}
+          className={cn(banner?.desktop?.url ? desktopClassName : mobileClassName)}
         />
       </WrapperComponent>
     );
@@ -70,4 +70,4 @@ const Banner = ({
   return null;
 };
 
-export default Banner;
+export default memo(Banner);

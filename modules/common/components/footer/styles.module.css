@@ -43,7 +43,6 @@
 .container :global(.email-input .send-button) {
   background: #e79f00;
   border-radius: 0 30px 30px 0;
-  min-width: 100px;
 }
 
 .container :global(.terms) {
@@ -55,8 +54,8 @@
 }
 
 .container :global(.terms a) {
-    color: #E79F00;
-    text-decoration: underline;
+  color: #e79f00;
+  text-decoration: underline;
 }
 
 .container :global(.subscription-subtitle) {
@@ -80,5 +79,9 @@
 
   .container :global(.email-input) {
     width: 420px;
+  }
+
+  .container :global(.email-input .send-button) {
+    min-width: 100px;
   }
 }

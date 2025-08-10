@@ -1,0 +1,33 @@
+.container {
+  @apply relative flex flex-col items-center justify-center;
+  gap: 20px;
+}
+
+.container :global(.thumbs-container) {
+  @apply flex flex-col;
+  gap: 20px;
+}
+
+@media (min-width: 760px) {
+  .container {
+    @apply justify-stretch;
+  }
+
+  .container :global(.thumbs-container) {
+    @apply flex-row;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    @apply flex-row items-stretch justify-stretch;
+  }
+
+  .container :global(.thumbs-container) {
+    @apply flex-col;
+  }
+
+  .container :global(.thumbs-container) {
+      max-width: 32.6%;
+  }
+}

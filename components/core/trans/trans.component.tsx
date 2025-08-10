@@ -5,7 +5,7 @@ import { ClassNameProps } from '@/types/classnames-props.type';
 const defaultComponents = {
   primary: <span className="text-primary" />,
   secondary: <span className="text-secondary" />,
-  error: <span className="text-red-600" />,
+  error: <span className="text-red-700" />,
   important: <span className="font-bold" />,
   italic: <span className="italic" />,
   br: <br />
