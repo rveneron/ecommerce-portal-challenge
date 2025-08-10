@@ -1,5 +1,5 @@
 import { ReactNode } from 'react';
-import { MediaItem } from '@/interfaces/media.interface';
+import { IMediaItem } from '@/interfaces/media.interface';
 
 export type Category = {
   icon: ReactNode;
@@ -8,5 +8,5 @@ export type Category = {
   order: number;
   slug: string;
   _id: string;
-  imagePath?: MediaItem;
+  imagePath?: IMediaItem;
 };
