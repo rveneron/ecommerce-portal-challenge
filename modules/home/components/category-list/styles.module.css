@@ -1,0 +1,10 @@
+.container {
+  @apply flex flex-col items-center justify-center;
+  gap: 20px;
+}
+
+@media (min-width: 800px) {
+  .container {
+    @apply grid grid-cols-3;
+  }
+}

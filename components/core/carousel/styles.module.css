@@ -1,0 +1,99 @@
+.container {
+  position: relative;
+  border-radius: 6px;
+  border: 1px solid #ffedd5;
+  background: #f9e2bf;
+  min-height: 188px;
+  max-height: 188px;
+}
+
+.container :global(.safe-carefully-data) {
+  @apply flex flex-col;
+  overflow: hidden;
+  width: 100%;
+}
+
+.container :global(.safe-carefully-data .data-text) {
+  @apply flex flex-col;
+  padding: 10px 28px;
+}
+
+.container :global(.safe-carefully-title) {
+  color: #e79f00;
+  font-family: Montserrat, sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  z-index: 2;
+}
+
+.container :global(.safe-carefully-subtitle) {
+  color: #264092;
+  font-family: Montserrat, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  z-index: 2;
+}
+
+.container :global(.safe-carefully-subtitle a) {
+  font-weight: 700;
+}
+
+.container :global(.safe-carefully-discount) {
+  font-family: Inter, sans-serif;
+  font-size: 100px;
+  line-height: 80px;
+  font-weight: 700;
+  background: linear-gradient(0deg, rgba(231, 159, 0, 0.4) 0%, rgba(231, 159, 0, 0) 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: center;
+}
+
+.container :global(.embla) {
+    transform: translateY(20px);
+    overflow-x: hidden;
+}
+
+@media (min-width: 760px) {
+  .container {
+    min-height: 85px;
+    max-height: 85px;
+  }
+
+  .container :global(.safe-carefully-data .data-text) {
+    padding: 10px 0 10px 28px;
+  }
+
+  .container :global(.safe-carefully-data) {
+    @apply flex-row items-center justify-between;
+    width: 100%;
+  }
+}
+
+@media (min-width: 1280px) {
+  .container {
+    @apply flex flex-row items-center justify-between;
+  }
+
+  .container :global(.safe-carefully-data) {
+    width: 53.8%;
+  }
+
+  .container :global(.safe-carefully-title) {
+    font-size: 26px;
+    max-width: 650px;
+  }
+
+  .container :global(.safe-carefully-subtitle) {
+    max-width: 650px;
+  }
+
+  .container :global(.safe-carefully-discount) {
+    transform: unset;
+  }
+
+  .container :global(.embla) {
+    transform: translateY(-10px);
+  }
+}

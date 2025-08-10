@@ -1,0 +1,15 @@
+.container {
+  position: relative;
+  display: flex;
+  min-width: 146px;
+  min-height: 169px;
+  padding: 20px 4px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #dadff2;
+  border-radius: 10px;
+}
+
+.container :global(.image-container) {
+}
