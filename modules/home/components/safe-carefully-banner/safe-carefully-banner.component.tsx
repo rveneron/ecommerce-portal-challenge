@@ -4,13 +4,16 @@ import styles from './styles.module.css';
 import { ClassNameProps } from '@/types/classnames-props.type';
 import { TProps } from '@/types/t-props.type';
 import Link from 'next/link';
+import { IProduct } from '@/interfaces/product';
+import SmallProductsCarousel from '@/modules/home/components/safe-carefully-banner/products-carousel.component';
 
 type Props = ClassNameProps &
   TProps & {
     discount: string;
+    products: IProduct[];
   };
 
-const SafeCarefullyBanner = ({ className, t, discount = '-50%' }: Props) => {
+const SafeCarefullyBanner = ({ className, t, products, discount = '-50%' }: Props) => {
   return (
     <div className={cn(styles.container, className)}>
       <div className={'safe-carefully-data'}>
@@ -23,6 +26,7 @@ const SafeCarefullyBanner = ({ className, t, discount = '-50%' }: Props) => {
         </div>
         <div className="safe-carefully-discount">{discount}</div>
       </div>
+      <SmallProductsCarousel products={products} />
     </div>
   );
 };

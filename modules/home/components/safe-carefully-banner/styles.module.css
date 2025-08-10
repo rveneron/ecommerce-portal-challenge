@@ -4,11 +4,12 @@
   border: 1px solid #ffedd5;
   background: #f9e2bf;
   min-height: 188px;
-  overflow: hidden;
+  max-height: 188px;
 }
 
 .container :global(.safe-carefully-data) {
   @apply flex flex-col;
+  overflow: hidden;
   width: 100%;
 }
 
@@ -49,9 +50,15 @@
   text-align: center;
 }
 
+.container :global(.embla) {
+    transform: translateY(20px);
+    overflow-x: hidden;
+}
+
 @media (min-width: 760px) {
   .container {
     min-height: 85px;
+    max-height: 85px;
   }
 
   .container :global(.safe-carefully-data .data-text) {
@@ -64,7 +71,11 @@
   }
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 1280px) {
+  .container {
+    @apply flex flex-row items-center justify-between;
+  }
+
   .container :global(.safe-carefully-data) {
     width: 53.8%;
   }
@@ -80,5 +91,9 @@
 
   .container :global(.safe-carefully-discount) {
     transform: unset;
+  }
+
+  .container :global(.embla) {
+    transform: translateY(-10px);
   }
 }

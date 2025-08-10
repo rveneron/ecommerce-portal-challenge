@@ -5,6 +5,7 @@ import { getMainAds, getSecondaryAds } from '@/modules/common/services/ads';
 import DrugStoreBanner from '@/modules/home/components/drug-store-banner/drug-store-banner.component';
 import initTranslations from '@/i18n';
 import SafeCarefullyBanner from '@/modules/home/components/safe-carefully-banner/safe-carefully-banner.component';
+import { getSaveProducts } from '@/modules/common/services/products';
 
 type Props = {
   params: Promise<{ locale: string }>;
@@ -16,9 +17,10 @@ export default async function Home({ params }: Readonly<Props>) {
   const dynamicParams = await params;
   const { t } = await initTranslations(dynamicParams?.locale, i18nNamespaces);
 
-  const [mainAdsResponse, secondaryAdsResponse] = await Promise.all([
+  const [mainAdsResponse, secondaryAdsResponse, productsResponse] = await Promise.all([
     getMainAds(),
-    getSecondaryAds()
+    getSecondaryAds(),
+    getSaveProducts()
   ]);
 
   return (
@@ -33,8 +35,12 @@ export default async function Home({ params }: Readonly<Props>) {
       <PageWidthContainer className={'mb-[70px]'}>
         <AdsList ads={secondaryAdsResponse?.data?.data || []} />
       </PageWidthContainer>
-      <PageWidthContainer className={'mb-[70px]'}>
-        <SafeCarefullyBanner t={t} />
+      <PageWidthContainer className={'mb-[200px] xl:mb-[70px]'}>
+        <SafeCarefullyBanner
+          t={t}
+          discount={'-20%'}
+          products={productsResponse?.data?.data || []}
+        />
       </PageWidthContainer>
     </div>
   );
