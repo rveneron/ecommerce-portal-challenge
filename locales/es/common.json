@@ -1,4 +1,18 @@
 {
   "send": "Enviar",
-  "email": "Correo electrónico"
+  "email": "Correo electrónico",
+  "drugStoreTrust": {
+    "title": "Tu Farmacia Online de Confianza",
+    "subtitle": {
+      "part1": "Amplio catálogo de medicamentos y productos para tu bienestar. ",
+      "part2": "Explora nuestro catálogo"
+    }
+  },
+  "safeCarefully": {
+    "title": "¡Ahorra en tu Cuidado!",
+    "subtitle": {
+      "part1": "Aprovechas las ofertas que tenemos este mes. ",
+      "part2": "Revisar ofertas"
+    }
+  }
 }

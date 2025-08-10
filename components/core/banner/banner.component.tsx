@@ -26,14 +26,14 @@ const WrapperComponent = ({ banner, children, className }: WrapperProps) => {
     );
   }
 
-  return <>{children}</>;
+  return <div className={className}>{children}</div>;
 };
 
 const Banner = ({ className, desktopClassName, mobileClassName, banner }: Props) => {
   if (banner?.desktop?.url && banner?.mobile?.url) {
     return (
       <WrapperComponent banner={banner} className={className}>
-        <div>
+        <>
           <Image
             alt={banner?.name || ''}
             src={banner?.mobile?.url}
@@ -48,7 +48,7 @@ const Banner = ({ className, desktopClassName, mobileClassName, banner }: Props)
             height={banner?.desktop?.height}
             className={cn('hidden md:block', desktopClassName)}
           />
-        </div>
+        </>
       </WrapperComponent>
     );
   }
