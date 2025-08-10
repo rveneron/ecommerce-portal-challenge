@@ -1,4 +1,4 @@
-import { memo } from 'react';
+import { memo, ReactNode } from 'react';
 import { Trans as ReactTrans } from 'react-i18next';
 import { ClassNameProps } from '@/types/classnames-props.type';
 
@@ -14,7 +14,7 @@ const defaultComponents = {
 export type Props = ClassNameProps & {
   message: string;
   values?: Record<string, string>;
-  components?: Record<string, any>;
+  components?: Record<string, ReactNode | string>;
 };
 
 const Trans = ({ className, message, values = {}, components = {} }: Props) => {

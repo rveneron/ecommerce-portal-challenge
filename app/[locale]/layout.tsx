@@ -53,7 +53,7 @@ export const metadata: Metadata = {
   }
 };
 
-export function generateStaticParams(_params: Record<string, string>) {
+export function generateStaticParams(_params: unknown) {
   return i18nConfig.locales.map((locale) => ({
     locale
   }));
