@@ -7,19 +7,18 @@ import styles from './styles.module.css';
 import { cn } from '@/lib/utils';
 import { TProps } from '@/types/t-props.type';
 
-type Props = ClassNameProps & TProps & {
-  categories: Category[];
-};
+type Props = ClassNameProps &
+  TProps & {
+    categories: Category[];
+  };
 
 const CategoryList = ({ className, categories, t }: Props) => {
   return (
     <div className={cn(styles.container, className)}>
-      <div className="category-section-title">
-        {t('common:categorySection.title')}
-      </div>
+      <div className="category-section-title">{t('common:categorySection.title')}</div>
       <Carousel
         slides={categories.map((category: Category) => (
-          <CategoryCard product={category} key={category._id} />
+          <CategoryCard category={category} key={category._id} />
         ))}
       />
     </div>

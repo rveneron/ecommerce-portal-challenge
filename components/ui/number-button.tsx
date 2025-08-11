@@ -3,8 +3,8 @@
 import { ClassNameProps } from '@/types/classnames-props.type';
 
 type Props = ClassNameProps & {
-  value: number;
-  onChange: (value: number) => void;
+  value?: number;
+  onChange?: (value: number) => void;
 };
 
 import { MinusIcon, PlusIcon } from 'lucide-react';
@@ -15,8 +15,8 @@ import { cn } from '@/lib/utils';
 
 const buttonClasses = 'rounded-none shadow-none border-none focus-visible:z-10 bg-white';
 
-const NumberButton = ({ className, value, onChange }: Props) => {
-  const [val, setVal] = useState(0);
+const NumberButton = ({ className, value = 0, onChange }: Props) => {
+  const [val, setVal] = useState(value);
 
   const increment = useCallback(() => {
     setVal((val) => {

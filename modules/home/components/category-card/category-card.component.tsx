@@ -9,12 +9,12 @@ type Props = ClassNameProps & {
   category: Category;
 };
 
-const CategoryCard = ({ className, product }: Props) => {
+const CategoryCard = ({ className, category }: Props) => {
   return (
     <div className={cn(styles.container, className)}>
       <div className="semicircle"></div>
-      {getCategoryIcon(product)}
-      <div className={'category-name'}>{product.name}</div>
+      {getCategoryIcon(category)}
+      <div className={'category-name'}>{category.name}</div>
     </div>
   );
 };
