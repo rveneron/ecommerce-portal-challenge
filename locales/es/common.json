@@ -22,5 +22,8 @@
   },
   "categorySection": {
     "title": "Obtén todo, justo aquí"
+  },
+  "recommendedProductsSection": {
+    "title": "Recomendado para tí"
   }
 }

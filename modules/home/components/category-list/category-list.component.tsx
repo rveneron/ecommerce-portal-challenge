@@ -19,7 +19,7 @@ const CategoryList = ({ className, categories, t }: Props) => {
       </div>
       <Carousel
         slides={categories.map((category: Category) => (
-          <CategoryCard category={category} key={category._id} />
+          <CategoryCard product={category} key={category._id} />
         ))}
       />
     </div>

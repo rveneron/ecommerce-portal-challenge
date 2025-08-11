@@ -1,0 +1,58 @@
+.container {
+  border-radius: 15px;
+  background: rgba(255, 255, 255, 0.5);
+  box-shadow: 0 20px 30px 0 rgba(43, 52, 69, 0.04);
+  backdrop-filter: blur(9px);
+  overflow: hidden;
+}
+
+.container :global(.recommended-product-data-container) {
+  padding: 10px 16px;
+}
+
+.container :global(.price) {
+  color: #2b3445;
+  font-family: Montserrat, sans-serif;
+  margin-bottom: 4px;
+  @apply flex flex-row items-start;
+}
+
+.container :global(.price .amount) {
+  font-size: 20px;
+  line-height: 20px;
+  font-weight: 500;
+}
+
+.container :global(.price .cents) {
+  font-size: 12px;
+  line-height: 12px;
+  font-weight: 300;
+}
+
+.container :global(.title) {
+  @apply line-clamp-2;
+  color: #2b3445;
+  font-family: Montserrat, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  min-height: 34px;
+}
+
+@media (min-width: 600px) {
+  .container {
+  }
+
+  .container :global(.price) {
+    gap: 4px;
+  }
+
+  .container :global(.price .amount) {
+    font-size: 26px;
+    line-height: 26px;
+  }
+
+  .container :global(.price .cents) {
+    font-size: 18px;
+    line-height: 18px;
+  }
+}

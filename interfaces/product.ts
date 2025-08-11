@@ -9,4 +9,6 @@ export interface IProduct {
   rate?: IRate;
   price: number;
   image?: IMediaItem;
+  discount?: string;
+  createdAt: string;
 }

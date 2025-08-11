@@ -1,0 +1,29 @@
+.container :global(.recommended-products-section-content) {
+  @apply grid grid-cols-2 gap-5;
+}
+
+.container :global(.recommended-products-section-title) {
+  color: #2b3445;
+  font-family: Montserrat, sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+
+@media (min-width: 960px) {
+  .container :global(.recommended-products-section-content) {
+    @apply grid-cols-3;
+  }
+}
+
+@media (min-width: 1360px) {
+  .container :global(.recommended-products-section-content) {
+    @apply grid-cols-4;
+  }
+}
+
+@media (min-width: 1800px) {
+  .container :global(.recommended-products-section-content) {
+    @apply grid-cols-5;
+  }
+}
