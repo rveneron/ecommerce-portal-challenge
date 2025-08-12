@@ -1,5 +1,3 @@
-'use client';
-
 import { ClassNameProps } from '@/types/classnames-props.type';
 
 type Props = ClassNameProps & {
@@ -10,7 +8,7 @@ type Props = ClassNameProps & {
 import { MinusIcon, PlusIcon } from 'lucide-react';
 
 import { Button } from '@/components/ui/button';
-import { memo, useCallback, useState } from 'react';
+import { memo, MouseEventHandler, useCallback, useState } from 'react';
 import { cn } from '@/lib/utils';
 
 const buttonClasses = 'rounded-none shadow-none border-none focus-visible:z-10 bg-white';
@@ -18,22 +16,32 @@ const buttonClasses = 'rounded-none shadow-none border-none focus-visible:z-10 b
 const NumberButton = ({ className, value = 0, onChange }: Props) => {
   const [val, setVal] = useState(value);
 
-  const increment = useCallback(() => {
-    setVal((val) => {
-      onChange?.(val + 1);
-      return val + 1;
-    });
-  }, [onChange]);
+  const increment = useCallback(
+    (evt: any) => {
+      evt.preventDefault();
+      evt.stopPropagation();
+      setVal((val) => {
+        onChange?.(val + 1);
+        return val + 1;
+      });
+    },
+    [onChange]
+  );
 
-  const decrement = useCallback(() => {
-    setVal((val) => {
-      if (val > 0) {
-        onChange?.(val - 1);
-        return val - 1;
-      }
-      return val;
-    });
-  }, [onChange]);
+  const decrement = useCallback(
+    (evt: any) => {
+      evt.preventDefault();
+      evt.stopPropagation();
+      setVal((val) => {
+        if (val > 0) {
+          onChange?.(val - 1);
+          return val - 1;
+        }
+        return val;
+      });
+    },
+    [onChange]
+  );
 
   return (
     <div
@@ -52,7 +60,7 @@ const NumberButton = ({ className, value = 0, onChange }: Props) => {
         aria-label="rest"
         onClick={decrement}
       >
-        <MinusIcon size={16} aria-hidden="true" />
+        <MinusIcon size={16} aria-hidden="true" className={'!text-[#2B3445]'} />
       </Button>
       <span className="relative flex w-[48px] items-center bg-white">
         <div className={'w-full border-x-[1px] px-2 text-center'}>{val}</div>
@@ -64,7 +72,7 @@ const NumberButton = ({ className, value = 0, onChange }: Props) => {
         aria-label="add"
         onClick={increment}
       >
-        <PlusIcon size={16} aria-hidden="true" />
+        <PlusIcon size={16} aria-hidden="true" className={'!text-[#2B3445]'} />
       </Button>
     </div>
   );

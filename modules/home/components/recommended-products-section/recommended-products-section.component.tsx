@@ -14,10 +14,10 @@ type Props = ClassNameProps &
 const RecommendedProductSection = ({ className, products, t }: Props) => {
   return (
     <div className={cn(styles.container, className)}>
-      <div className="recommended-products-section-title">{t('common:categorySection.title')}</div>
+      <div className="recommended-products-section-title">{t('common:recommendedProductsSection.title')}</div>
       <div className="recommended-products-section-content">
         {products.map((product: IProduct) => (
-          <ProductCard product={product} key={product._id} />
+          <ProductCard product={product} key={product._id} t={t} />
         ))}
       </div>
     </div>

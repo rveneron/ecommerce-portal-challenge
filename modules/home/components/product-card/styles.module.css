@@ -10,6 +10,19 @@
   padding: 10px 16px;
 }
 
+.container :global(.new-ribbon) {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 15px 0 20px 0;
+  background: #e79f00;
+  padding: 3px 18px;
+  color: #fff;
+  font-family: Montserrat, sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+}
+
 .container :global(.price) {
   color: #2b3445;
   font-family: Montserrat, sans-serif;
@@ -35,7 +48,7 @@
   font-family: Montserrat, sans-serif;
   font-size: 14px;
   font-weight: 400;
-  min-height: 34px;
+  min-height: 42px;
 }
 
 @media (min-width: 600px) {
