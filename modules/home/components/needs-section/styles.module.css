@@ -1,0 +1,16 @@
+.container {
+  padding: 50px 40px 70px 40px;
+  @apply flex flex-col items-stretch justify-stretch;
+  @apply bg-primary;
+  gap: 50px;
+}
+
+.container :global(.card-list) {
+  @apply gap-1;
+}
+
+@media (min-width: 800px) {
+  .container {
+    @apply grid grid-cols-3;
+  }
+}

@@ -39,5 +39,20 @@
   },
   "recentsProductsSection": {
     "title": "Lo más reciente"
+  },
+  "needsSection": {
+    "title": "Lo que necesitas, cuando lo necesitas",
+    "payment": {
+      "title": "Paga desde donde estés",
+      "description": "Paga con tarjeta de débito o crédito desde cualquier parte del mundo donde te encuentres."
+    },
+    "delivery": {
+      "title": "Envío gratis desde $50 USD",
+      "description": "Con solo estar registrado, tienes envíos gratis para un grupo de productos. "
+    },
+    "location": {
+      "title": "Entregas en todo el país",
+      "description": "LLevamos tu pedido seguro y con garantía hasta la puerta de tu casa."
+    }
   }
 }
