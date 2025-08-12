@@ -101,3 +101,20 @@ export const secondaryAds: IBanner[] = [
     }
   }
 ];
+
+export const recentAd = {
+  name: 'Complemento de vitaminas y analgésicos',
+  link: '/',
+  desktop: {
+    url: '/images/mockup/banners/recent-banner-desktop.webp',
+    thumb: '/images/mockup/banners/recent-banner-desktop.webp',
+    width: 570,
+    height: 405
+  },
+  mobile: {
+    url: '/images/mockup/banners/recent-banner-mobile.webp',
+    thumb: '/images/mockup/banners/recent-banner-mobile.webp',
+    width: 391,
+    height: 278
+  }
+};

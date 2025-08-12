@@ -103,7 +103,7 @@
 }
 
 .page-width-container {
-  @apply mx-auto w-full max-w-[1445px] px-[20px];
+  @apply mx-auto w-full max-w-[1445px] px-[20px] md:px-[60px] xl:px-0;
 }
 
 /* Rating*/

@@ -1,0 +1,118 @@
+.container {
+  position: relative;
+}
+
+.container :global(.recents-products-section-title) {
+  color: #2b3445;
+  font-family: Montserrat, sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+
+.container :global(.recent-mobile-banner) {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.container :global(.recent-desktop-banner) {
+  display: none;
+}
+
+.container :global(.embla) {
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.container :global(.embla__viewport) {
+  overflow-x: hidden;
+}
+
+.container :global(.embla__container) {
+  display: flex;
+  gap: 16px;
+  touch-action: pan-y pinch-zoom;
+  margin-left: -16px;
+}
+
+.container :global(.embla__slide) {
+  transform: translate3d(0, 0, 0);
+  flex: 0 0 276px;
+  min-width: 0;
+  padding-left: 16px;
+}
+
+.container :global(.embla__slide:first-of-type) {
+  display: none;
+}
+
+.container :global(.embla__controls) {
+  @apply flex items-center justify-center;
+  transform: translateY(10px);
+}
+
+.container :global(.embla__dots) {
+  @apply flex items-center justify-center gap-1;
+}
+
+.container :global(.embla__slide__link) {
+  display: block;
+}
+
+.container :global(.embla__dot) {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #bfc5df;
+}
+
+.container :global(.embla__dotembla__dot--selected) {
+  width: 24px;
+  height: 8px;
+  border-radius: 5px;
+  background-color: #e79f00;
+}
+
+.container :global(.embla__slide:first-of-type) {
+  @apply hidden;
+}
+
+@media (min-width: 600px) {
+  .container :global(.recent-mobile-banner) {
+    @apply hidden;
+  }
+
+  .container :global(.recent-desktop-banner) {
+    @apply block w-full;
+  }
+
+  .container :global(.embla__slide:first-of-type) {
+    @apply relative col-span-2 block;
+  }
+
+  .container :global(.embla__container) {
+    @apply grid grid-cols-2;
+  }
+
+  .container :global(.embla__controls) {
+    @apply hidden;
+  }
+}
+
+@media (min-width: 800px) {
+  .container :global(.embla__container) {
+    @apply grid-cols-3;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container :global(.embla__container) {
+    @apply grid-cols-4;
+  }
+}
+
+@media (min-width: 1360px) {
+  .container :global(.embla__container) {
+    @apply grid-cols-5;
+  }
+}

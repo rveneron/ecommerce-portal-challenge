@@ -33,5 +33,11 @@
   },
   "recommendedProductsSection": {
     "title": "Recomendado para tí"
+  },
+  "mostSellProductsSection": {
+    "title": "Lo más vendido"
+  },
+  "recentsProductsSection": {
+    "title": "Lo más reciente"
   }
 }

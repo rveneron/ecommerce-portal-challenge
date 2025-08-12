@@ -17,3 +17,20 @@ export const getRecommendedProducts = (
     data: { data: recommendedProducts, total: recommendedProducts.length }
   });
 };
+
+export const getMostSellProducts = (
+  params: SearchParams = {}
+): Promise<ApiResponse<SearchResponse<IProduct>>> => {
+  return Promise.resolve({
+    data: { data: recommendedProducts, total: recommendedProducts.length }
+  });
+};
+
+export const getRecentsProducts = (
+  params: SearchParams = {}
+): Promise<ApiResponse<SearchResponse<IProduct>>> => {
+  const result = recommendedProducts.slice(0, 8);
+  return Promise.resolve({
+    data: { data: result, total: result.length }
+  });
+};

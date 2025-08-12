@@ -17,6 +17,7 @@ const CategoryList = ({ className, categories, t }: Props) => {
     <div className={cn(styles.container, className)}>
       <div className="category-section-title">{t('common:categorySection.title')}</div>
       <Carousel
+        showButtons={false}
         slides={categories.map((category: Category) => (
           <CategoryCard category={category} key={category._id} />
         ))}
