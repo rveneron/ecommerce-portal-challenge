@@ -18,6 +18,7 @@ import RecommendedProductSection from '@/modules/home/components/recommended-pro
 import MostSellList from '@/modules/home/components/most-sell-list/most-sell-list.component';
 import i18nConfig from '@/i18nConfig';
 import RecentProductSection from '@/modules/home/components/recents-products-section/recents-products-section.component';
+import { Suspense } from 'react';
 
 type Props = {
   params: Promise<{ locale: string }>;
@@ -67,16 +68,24 @@ export default async function Home({ params }: Readonly<Props>) {
         <CategoryList categories={categoriesResponse?.data?.data || []} t={t} />
         <DrugStoreBanner t={t} className={'mt-[20px] xl:mt-[10px]'} />
       </PageWidthContainer>
-      <RecommendedProductSection
-        products={recommendedProductsResponse?.data?.data || []}
-        className={'page-width-container mb-[70px]'}
-        t={t}
-      />
+      <Suspense
+        fallback={
+          <RecommendedProductSection isLoading className={'page-width-container mb-[70px]'} t={t} />
+        }
+      >
+        <RecommendedProductSection
+          products={recommendedProductsResponse?.data?.data || []}
+          className={'page-width-container mb-[70px]'}
+          t={t}
+        />
+      </Suspense>
       <PageWidthContainer className={'mb-[70px]'}>
         <AdsList ads={secondaryAdsResponse?.data?.data || []} className={'mb-[70px]'} />
       </PageWidthContainer>
       <PageWidthContainer className={'mb-[70px] px-0'}>
-        <MostSellList t={t} products={mostSellProductsResponse?.data?.data || []} />
+        <Suspense fallback={<MostSellList t={t} isLoading />}>
+          <MostSellList t={t} products={mostSellProductsResponse?.data?.data || []} />
+        </Suspense>
       </PageWidthContainer>
       <PageWidthContainer className={'mb-[70px]'}>
         <RecentProductSection

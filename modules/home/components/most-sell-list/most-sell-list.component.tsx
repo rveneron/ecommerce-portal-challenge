@@ -6,22 +6,39 @@ import { cn } from '@/lib/utils';
 import { TProps } from '@/types/t-props.type';
 import { IProduct } from '@/interfaces/product';
 import ProductCard from '@/modules/home/components/product-card/product-card.component';
+import { ChildrenListProps } from '@/types/children-props.type';
+import ProductCardSkeleton from '@/modules/home/components/product-card/product-card-skeleton.component';
 
 type Props = ClassNameProps &
   TProps & {
-    products: IProduct[];
+    isLoading?: boolean;
+    products?: IProduct[];
   };
 
-const MostSellList = ({ className, products, t }: Props) => {
-  return (
+const MostSellList = ({ className, products = [], t, isLoading }: Props) => {
+  const Wrapper = ({ children }: ChildrenListProps) => (
     <div className={cn(styles.container, className)}>
       <div className="product-section-title">{t('common:mostSellProductsSection.title')}</div>
-      <Carousel
-        slides={products.map((product: IProduct) => (
-          <ProductCard product={product} key={product._id} t={t} className={'min-w-[276px]'} />
-        ))}
-      />
+      <Carousel slides={children} />
     </div>
+  );
+
+  if (isLoading) {
+    return (
+      <Wrapper>
+        {Array.from({ length: 10 }).map((_, index) => (
+          <ProductCardSkeleton key={index} />
+        ))}
+      </Wrapper>
+    );
+  }
+
+  return (
+    <Wrapper>
+      {products?.map((product: IProduct) => (
+        <ProductCard product={product} key={product._id} t={t} />
+      ))}
+    </Wrapper>
   );
 };
 
