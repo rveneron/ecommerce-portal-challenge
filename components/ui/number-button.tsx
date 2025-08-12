@@ -8,7 +8,7 @@ type Props = ClassNameProps & {
 import { MinusIcon, PlusIcon } from 'lucide-react';
 
 import { Button } from '@/components/ui/button';
-import { memo, MouseEventHandler, useCallback, useState } from 'react';
+import { memo, useCallback, useState } from 'react';
 import { cn } from '@/lib/utils';
 
 const buttonClasses = 'rounded-none shadow-none border-none focus-visible:z-10 bg-white';
