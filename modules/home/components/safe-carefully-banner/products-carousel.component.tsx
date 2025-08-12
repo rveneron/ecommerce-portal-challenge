@@ -26,7 +26,7 @@ const SmallProductsCarousel: React.FC<Props> = ({ products, options }) => {
         <div className="embla__container">
           {products.map((product, index) => (
             <div className="embla__slide" key={index}>
-              <Link href={`/products/${product.slug}`} className={'embla__slide__link'}>
+              <Link href={`/product/${product.slug}`} className={'embla__slide__link'}>
                 <Image
                   src={product?.image?.url || FALL_BACK_IMAGE}
                   alt={product.name}

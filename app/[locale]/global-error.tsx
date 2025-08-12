@@ -21,12 +21,12 @@ export default function GlobalError({
   reset: () => void;
 }) {
   useEffect(() => {
-    // Log the error to an error reporting service
-    console.error('Next,JS error =======:', error);
+    // Do something with the error
+    console.error('Server error => ', error);
   }, [error]);
 
   return (
-    <html lang="en">
+    <html lang="es">
       <body className={cn(inter.className)}>
         <main>
           <ServerErrorLayout reset={reset} />
