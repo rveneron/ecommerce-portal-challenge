@@ -65,7 +65,7 @@ export default async function Home({ params }: Readonly<Props>) {
         className={'page-width-container mb-[55px]'}
       />
       <PageWidthContainer className={'mb-[70px]'}>
-        {/*<CategoryList categories={categoriesResponse?.data?.data || []} t={t} />*/}
+        <CategoryList categories={categoriesResponse?.data?.data || []} t={t} />
         <DrugStoreBanner t={t} className={'mt-[20px] xl:mt-[10px]'} />
       </PageWidthContainer>
       <Suspense

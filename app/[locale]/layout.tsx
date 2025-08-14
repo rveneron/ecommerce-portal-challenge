@@ -8,7 +8,7 @@ import MainProvider from '@/context/main.provider';
 import i18nConfig from '@/i18nConfig';
 import { dir } from 'i18next';
 import { notFound } from 'next/navigation';
-import initTranslations from '@/app/i18n';
+import NextTopLoader from 'nextjs-toploader';
 
 const inter = Inter({
   weight: ['300', '400', '500', '600', '700'],
@@ -67,8 +67,6 @@ export default async function RootLayout({
 }>) {
   const { locale } = await params;
 
-  const { resources } = await initTranslations(locale, i18nNamespaces);
-
   if (!i18nConfig.locales.includes(locale)) {
     notFound();
   }
@@ -76,7 +74,7 @@ export default async function RootLayout({
   return (
     <html lang={locale} dir={dir(locale)}>
       <body className={cn(inter.className, monserrat.className, 'antialiased')}>
-        {/*<NextTopLoader
+        <NextTopLoader
           color="#264092"
           initialPosition={0.08}
           crawlSpeed={200}
@@ -89,7 +87,7 @@ export default async function RootLayout({
           template='<div class="bar" role="bar"><div class="peg"></div></div><div class="spinner" role="spinner"><div class="spinner-icon"></div></div>'
           zIndex={999}
           showAtBottom={false}
-        />*/}
+        />
         <MainProvider>{children}</MainProvider>
       </body>
     </html>
