@@ -8,7 +8,7 @@
 .container :global(.header) {
   min-height: 100px;
   background: #fff;
-  @apply flex items-center justify-between gap-4;
+  @apply flex items-center justify-between gap-0;
 }
 
 .container :global(.username) {
@@ -36,6 +36,10 @@
     min-height: 150px;
     box-shadow: none;
     padding: 0;
+  }
+
+  .container :global(.header) {
+    @apply gap-4;
   }
 
   .container :global(.username) {

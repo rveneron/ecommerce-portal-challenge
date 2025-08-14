@@ -60,7 +60,7 @@ export default async function Home({ params }: Readonly<Props>) {
   ]);
 
   return (
-    <div className={'min-h-screen pt-8'}>
+    <div className={'overflow-x-hidden pt-8'}>
       <Gallery
         ads={mainAdsResponse?.data?.data || []}
         className={'page-width-container mb-[55px]'}

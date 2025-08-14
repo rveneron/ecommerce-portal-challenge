@@ -104,12 +104,12 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
           )
         },
         ghost: {
-          primary: '',
-          secondary: ''
+          primary: cn('relative'),
+          secondary: cn('relative')
         },
         grey: {
-          primary: '',
-          secondary: ''
+          primary: cn('relative'),
+          secondary: cn('relative')
         }
       };
       return colorMap[variant][color];
@@ -157,13 +157,13 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       >
         <div
           className={cn(
-            'flex items-center justify-center',
+            'flex w-full flex-1 flex-row items-center justify-between',
             size === 'icon' ? 'gap-0' : 'gap-2',
             iconPositionClass
           )}
         >
           {icon && <span className="flex items-center justify-center">{icon}</span>}
-          {children && <span>{children}</span>}
+          {children && <span className={'button-content'}>{children}</span>}
         </div>
       </Comp>
     );

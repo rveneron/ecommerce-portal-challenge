@@ -1,10 +1,10 @@
 .container {
   padding: 50px 35px 70px 35px;
-  @apply relative overflow-x-hidden bg-primary;
+  @apply relative overflow-visible bg-primary;
 }
 
 .container :global(.content) {
-  @apply flex w-full flex-col items-center justify-center;
+  @apply relative flex w-full flex-col items-center justify-center overflow-hidden;
   padding: 0 !important;
   gap: 50px;
 }
@@ -40,8 +40,8 @@
 .container :global(.capsule-2) {
   position: absolute;
   top: 0;
-  right: 0;
-  transform: translate(50px, -50%) scale(0.3);
+  right: -40px;
+  transform: translateY(-50%) scale(0.3);
 }
 
 .container :global(.capsule-3) {
@@ -56,6 +56,7 @@
   bottom: 20%;
   right: -60px;
   transform: scale(0.3) rotate(-90deg);
+  overflow-x: hidden;
 }
 
 @media (min-width: 1200px) {
