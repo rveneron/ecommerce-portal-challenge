@@ -7,6 +7,7 @@ import Link from 'next/link';
 import { TProps } from '@/types/t-props.type';
 import PageWidthContainer from '@/components/core/layout/page-with-container';
 import ProfileDropDown from '@/components/core/layout/profile-dropdown';
+import MenuDropDown from '@/components/core/layout/menu-dropdown';
 
 type Props = ClassNameProps & TProps;
 
@@ -14,7 +15,10 @@ const Navbar = ({ className, t }: Props) => {
   return (
     <div className={cn(styles.container, className)}>
       <PageWidthContainer className="header">
-        <div className="username">Tu Nombre</div>
+        <div className="flex gap-1">
+          <MenuDropDown t={t} />
+          <div className="username">Tu Nombre</div>
+        </div>
         <ProfileDropDown />
       </PageWidthContainer>
       <div className="menu">

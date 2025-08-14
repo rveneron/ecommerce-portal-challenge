@@ -1,6 +1,6 @@
 .container {
   padding: 50px 35px 70px 35px;
-  @apply relative bg-primary;
+  @apply relative overflow-x-hidden bg-primary;
 }
 
 .container :global(.content) {
