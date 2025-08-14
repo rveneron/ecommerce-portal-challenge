@@ -5,6 +5,9 @@ import { ChildrenProps } from '@/types/children-props.type';
 import TranslationsProvider from '@/context/translation-provider';
 import Navbar from '@/modules/common/components/navbar/navbar.component';
 import Footer from '@/modules/common/components/footer/footer.component';
+import i18nConfig from '@/i18nConfig';
+
+export const dynamic = 'force-static';
 
 export const metadata: Metadata = {
   title: 'Botifarma',
@@ -19,6 +22,12 @@ export const metadata: Metadata = {
     }
   }
 };
+
+export function generateStaticParams(_params: unknown) {
+  return i18nConfig.locales.map((locale) => ({
+    locale
+  }));
+}
 
 const i18nNamespaces = ['common', 'menu'];
 

@@ -50,6 +50,8 @@ export const metadata: Metadata = {
   }
 };
 
+export const dynamic = 'force-static';
+
 export function generateStaticParams(_params: unknown) {
   return i18nConfig.locales.map((locale) => ({
     locale
