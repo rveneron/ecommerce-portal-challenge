@@ -30,6 +30,30 @@
   max-width: 870px;
 }
 
+.container :global(.capsule-1) {
+  position: absolute;
+  top: 40%;
+  left: 0;
+  transform: translateX(-50%) scale(0.6) rotate(90deg);
+}
+
+.container :global(.capsule-2) {
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translate(50px, -50%) scale(0.3);
+}
+
+.container :global(.capsule-3) {
+  display: none;
+  position: absolute;
+}
+
+.container :global(.capsule-4) {
+  display: none;
+  position: absolute;
+}
+
 @media (min-width: 1200px) {
   .container {
     padding: 40px;
@@ -45,9 +69,28 @@
   .container :global(.card-list) {
     @apply flex-row items-stretch justify-center;
   }
+
+  .container :global(.capsule-1) {
+    top: unset;
+    bottom: 0;
+    left: 30%;
+    transform-origin: center center;
+    transform: translateY(40%) scale(0.6);
+  }
+
+  .container :global(.capsule-2) {
+    top: 0;
+    right: 0;
+    transform-origin: center center;
+    transform: translateY(-50%) scale(0.3);
+  }
 }
 
 @media (min-width: 1500px) {
+  .container {
+    overflow: visible;
+  }
+
   .container :global(.content) {
     @apply flex-row justify-between;
   }
