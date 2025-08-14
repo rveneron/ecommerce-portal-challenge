@@ -10,7 +10,8 @@ type Props = ClassNameProps & {
   banner: IBanner;
   desktopClassName?: string;
   mobileClassName?: string;
-  loading: 'eager' | 'lazy';
+  priority?: boolean;
+  loading?: 'eager' | 'lazy';
 };
 
 type WrapperProps = ChildrenProps &
@@ -30,7 +31,14 @@ const WrapperComponent = ({ banner, children, className }: WrapperProps) => {
   return <div className={className}>{children}</div>;
 };
 
-const Banner = ({ className, desktopClassName, mobileClassName, banner, loading }: Props) => {
+const Banner = ({
+  className,
+  desktopClassName,
+  mobileClassName,
+  banner,
+  priority,
+  loading = 'lazy'
+}: Props) => {
   if (banner?.desktop?.url && banner?.mobile?.url) {
     return (
       <WrapperComponent banner={banner} className={className}>
@@ -42,6 +50,7 @@ const Banner = ({ className, desktopClassName, mobileClassName, banner, loading 
             height={banner?.mobile?.height}
             className={cn('md:hidden', mobileClassName)}
             loading={loading}
+            priority={priority}
           />
           <Image
             alt={banner?.name || ''}
@@ -50,6 +59,7 @@ const Banner = ({ className, desktopClassName, mobileClassName, banner, loading 
             height={banner?.desktop?.height}
             className={cn('hidden md:block', desktopClassName)}
             loading={loading}
+            priority={priority}
           />
         </>
       </WrapperComponent>

@@ -26,7 +26,7 @@ const MostSellList = ({ className, products = [], t, isLoading }: Props) => {
   if (isLoading) {
     return (
       <Wrapper>
-        {Array.from({ length: 10 }).map((_, index) => (
+        {Array.from({ length: 5 }).map((_, index) => (
           <ProductCardSkeleton key={index} />
         ))}
       </Wrapper>

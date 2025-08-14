@@ -97,6 +97,7 @@ export const RatingButton = ({
         readOnly && 'cursor-default',
         className
       )}
+      aria-label={`Rating Button`}
       disabled={readOnly}
       onBlur={handleBlur}
       onClick={handleClick}

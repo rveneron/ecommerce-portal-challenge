@@ -1,7 +1,6 @@
 import type { Metadata } from 'next';
 import '../globals.css';
 import { Inter, Montserrat } from 'next/font/google';
-import { Toaster } from 'sonner';
 import * as React from 'react';
 import { ReactNode } from 'react';
 import { cn } from '@/lib/utils';
@@ -12,7 +11,6 @@ import { dir } from 'i18next';
 import { notFound } from 'next/navigation';
 import initTranslations from '@/app/i18n';
 import NextTopLoader from 'nextjs-toploader';
-import TranslationsProvider from '@/context/translation-provider';
 
 const inter = Inter({
   weight: ['300', '400', '500', '600', '700'],
@@ -96,10 +94,6 @@ export default async function RootLayout({
         <AppProvider>
           <MainProvider>{children}</MainProvider>
         </AppProvider>
-
-        <TranslationsProvider namespaces={i18nNamespaces} locale={locale} resources={resources}>
-          <Toaster />
-        </TranslationsProvider>
       </body>
     </html>
   );
