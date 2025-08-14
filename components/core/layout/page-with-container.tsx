@@ -8,7 +8,10 @@ interface PageWidthContainerProps extends React.HTMLAttributes<HTMLDivElement> {
 
 const PageWidthContainer = ({ children, className, ...props }: PageWidthContainerProps) => {
   return (
-    <div className={cn('mx-auto w-full max-w-[1445px] px-[20px] xl:px-0', className)} {...props}>
+    <div
+      className={cn('mx-auto w-full max-w-[1445px] px-5 md:px-16 2xl:px-0', className)}
+      {...props}
+    >
       {children}
     </div>
   );

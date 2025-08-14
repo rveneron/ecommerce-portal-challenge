@@ -1,0 +1,21 @@
+.container {
+  padding: 30px;
+  background: #fff;
+  border-radius: 20px;
+  @apply flex flex-col gap-1;
+}
+
+.container :global(.title) {
+  color: #264092;
+  font-family: Montserrat, sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 120%;
+}
+
+.container :global(.description) {
+  color: #122348;
+  font-family: Montserrat, sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+}

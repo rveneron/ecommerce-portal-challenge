@@ -1,16 +1,54 @@
 .container {
-  padding: 50px 40px 70px 40px;
-  @apply flex flex-col items-stretch justify-stretch;
-  @apply bg-primary;
+  padding: 50px 35px 70px 35px;
+  @apply relative bg-primary;
+}
+
+.container :global(.content) {
+  @apply flex w-full flex-col items-center justify-center;
+  padding: 0 !important;
   gap: 50px;
 }
 
-.container :global(.card-list) {
-  @apply gap-1;
+.container :global(.card) {
+  @apply flex-1;
 }
 
-@media (min-width: 800px) {
+.container :global(.section-title) {
+  width: 100%;
+  color: #fff;
+  text-align: center;
+  font-family: Montserrat, sans-serif;
+  font-size: 34px;
+  font-weight: 700;
+  line-height: 123%;
+  z-index: 2;
+}
+
+.container :global(.card-list) {
+  @apply flex flex-col gap-5;
+  z-index: 2;
+  max-width: 870px;
+}
+
+@media (min-width: 1200px) {
   .container {
-    @apply grid grid-cols-3;
+    padding: 40px;
+    @apply justify-center;
+  }
+
+  .container :global(.section-title) {
+    text-align: left;
+    font-size: 42px;
+    max-width: 475px;
+  }
+
+  .container :global(.card-list) {
+    @apply flex-row items-stretch justify-center;
+  }
+}
+
+@media (min-width: 1500px) {
+  .container :global(.content) {
+    @apply flex-row justify-between;
   }
 }

@@ -1,22 +1,41 @@
-import React from 'react';
+import React, { memo } from 'react';
 import { cn } from '@/lib/utils';
 import styles from './styles.module.css';
 import { ClassNameProps } from '@/types/classnames-props.type';
-import { IBanner } from '@/interfaces/media.interface';
-import Banner from '@/components/core/banner/banner.component';
+import { TProps } from '@/types/t-props.type';
+import Card from './card.component';
+import PageWidthContainer from '@/components/core/layout/page-with-container';
 
-type Props = ClassNameProps & {
-  ads: IBanner[];
-};
+type Props = ClassNameProps & TProps;
 
-const AdsList = ({ className, ads }: Props) => {
+const NeedsSection = ({ className, t }: Props) => {
   return (
     <div className={cn(styles.container, className)}>
-      {ads.map((ad, index) => (
-        <Banner banner={ad} key={ad.name || index} />
-      ))}
+      <PageWidthContainer className={'content'}>
+        <div className="section-title">{t('common:needsSection.title')}</div>
+        <div className="card-list">
+          <Card
+            className={'card'}
+            image={'/images/needs/payment.webp'}
+            title={t('common:needsSection.payment.title')}
+            description={t('common:needsSection.payment.description')}
+          />
+          <Card
+            className={'card'}
+            image={'/images/needs/delivery.webp'}
+            title={t('common:needsSection.delivery.title')}
+            description={t('common:needsSection.delivery.description')}
+          />
+          <Card
+            className={'card'}
+            image={'/images/needs/location.webp'}
+            title={t('common:needsSection.location.title')}
+            description={t('common:needsSection.location.description')}
+          />
+        </div>
+      </PageWidthContainer>
     </div>
   );
 };
 
-export default AdsList;
+export default memo(NeedsSection);

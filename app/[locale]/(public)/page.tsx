@@ -19,6 +19,7 @@ import MostSellList from '@/modules/home/components/most-sell-list/most-sell-lis
 import i18nConfig from '@/i18nConfig';
 import RecentProductSection from '@/modules/home/components/recents-products-section/recents-products-section.component';
 import { Suspense } from 'react';
+import NeedsSection from '@/modules/home/components/needs-section/needs-section.component';
 
 type Props = {
   params: Promise<{ locale: string }>;
@@ -87,6 +88,7 @@ export default async function Home({ params }: Readonly<Props>) {
           <MostSellList t={t} products={mostSellProductsResponse?.data?.data || []} />
         </Suspense>
       </PageWidthContainer>
+      <NeedsSection t={t} className={'mb-[70px]'} />
       <PageWidthContainer className={'mb-[70px]'}>
         <RecentProductSection
           t={t}

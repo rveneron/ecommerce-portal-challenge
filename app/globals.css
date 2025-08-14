@@ -46,9 +46,6 @@
     --secondary-foreground: 0 0% 9%;
     --btn-secondary: linear-gradient(49deg, #4e5291 4.86%, #a1a4c3 105.31%);
     --btn-secondary-hover: linear-gradient(49deg, #4e529195 4.86%, #a1a4c395 105.31%);
-
-    --primary-disabled: linear-gradient(180deg, #a94aa240 20%, #3f2675 100%);
-    --secondary-disabled: linear-gradient(168.6deg, #a1a4c380 15.43%, #4e5291 95.19%);
     --fill-star: 0%;
   }
 }
@@ -103,7 +100,7 @@
 }
 
 .page-width-container {
-  @apply mx-auto w-full max-w-[1445px] px-[20px] md:px-[60px] xl:px-0;
+  @apply mx-auto w-full max-w-[1445px] px-5 md:px-16 2xl:px-0;
 }
 
 /* Rating*/
