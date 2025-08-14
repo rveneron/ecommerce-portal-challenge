@@ -7,15 +7,15 @@ import Navbar from '@/modules/common/components/navbar/navbar.component';
 import Footer from '@/modules/common/components/footer/footer.component';
 
 export const metadata: Metadata = {
-  title: process.env.NEXT_PUBLIC_STORE_NAME_SEO || 'Botifarma',
-  description: process.env.NEXT_PUBLIC_STORE_DESCRIPTION_SEO || 'Botifarma',
+  title: 'Botifarma',
+  description: 'Botifarma',
   robots: {
-    index: false,
-    follow: false,
+    index: true,
+    follow: true,
     nocache: false,
     googleBot: {
-      index: false,
-      follow: false
+      index: true,
+      follow: true
     }
   }
 };
@@ -29,8 +29,6 @@ type Props = ChildrenProps & {
 export default async function RootLayout({ children, params }: Readonly<Props>) {
   const dynamicParams = await params;
   const { resources, t } = await initTranslations(dynamicParams?.locale, i18nNamespaces);
-
-  // const { data } = await getTreeCategories();
 
   return (
     <main className="relative">

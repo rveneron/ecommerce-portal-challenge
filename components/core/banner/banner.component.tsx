@@ -10,6 +10,7 @@ type Props = ClassNameProps & {
   banner: IBanner;
   desktopClassName?: string;
   mobileClassName?: string;
+  loading: 'eager' | 'lazy';
 };
 
 type WrapperProps = ChildrenProps &
@@ -29,7 +30,7 @@ const WrapperComponent = ({ banner, children, className }: WrapperProps) => {
   return <div className={className}>{children}</div>;
 };
 
-const Banner = ({ className, desktopClassName, mobileClassName, banner }: Props) => {
+const Banner = ({ className, desktopClassName, mobileClassName, banner, loading }: Props) => {
   if (banner?.desktop?.url && banner?.mobile?.url) {
     return (
       <WrapperComponent banner={banner} className={className}>
@@ -40,6 +41,7 @@ const Banner = ({ className, desktopClassName, mobileClassName, banner }: Props)
             width={banner?.mobile?.width}
             height={banner?.mobile?.height}
             className={cn('md:hidden', mobileClassName)}
+            loading={loading}
           />
           <Image
             alt={banner?.name || ''}
@@ -47,6 +49,7 @@ const Banner = ({ className, desktopClassName, mobileClassName, banner }: Props)
             width={banner?.desktop?.width}
             height={banner?.desktop?.height}
             className={cn('hidden md:block', desktopClassName)}
+            loading={loading}
           />
         </>
       </WrapperComponent>
@@ -58,6 +61,7 @@ const Banner = ({ className, desktopClassName, mobileClassName, banner }: Props)
       <WrapperComponent banner={banner}>
         <Image
           alt={banner?.name || ''}
+          loading={loading}
           src={(banner?.desktop?.url || banner?.mobile?.url) as string}
           width={banner?.desktop ? banner?.desktop?.width : banner?.mobile?.width}
           height={banner?.desktop ? banner?.desktop?.height : banner?.mobile?.height}

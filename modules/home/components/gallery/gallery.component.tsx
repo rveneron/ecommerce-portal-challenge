@@ -7,6 +7,7 @@ import Banner from '@/components/core/banner/banner.component';
 
 type Props = ClassNameProps & {
   ads: IBanner[];
+  loading?: 'eager' | 'lazy';
 };
 
 const emptyAd: IBanner = {
@@ -25,7 +26,7 @@ const emptyAd: IBanner = {
   }
 };
 
-const Gallery = ({ className, ads }: Props) => {
+const Gallery = ({ className, ads, loading = 'eager' }: Props) => {
   if (!ads.length) return null;
 
   return (
@@ -35,17 +36,20 @@ const Gallery = ({ className, ads }: Props) => {
         desktopClassName={'desktop-banner'}
         mobileClassName={'mobile-banner'}
         className={'flex-1'}
+        loading={loading}
       />
       <div className="thumbs-container">
         <Banner
           banner={ads?.[1] || emptyAd}
           desktopClassName={'desktop-banner'}
           mobileClassName={'mobile-banner'}
+          loading={loading}
         />
         <Banner
           banner={ads?.[2] || emptyAd}
           desktopClassName={'desktop-banner'}
           mobileClassName={'mobile-banner'}
+          loading={loading}
         />
       </div>
     </div>

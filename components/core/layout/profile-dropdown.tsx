@@ -9,7 +9,7 @@ interface Props extends React.HTMLAttributes<HTMLDivElement> {
 const ProfileDropDown = ({ className }: Props) => {
   return (
     <Avatar className={cn('h-[45px] w-[45px]', className)}>
-      <AvatarImage src="https://github.com/shadcn.png" width={45} height={45} />
+      <AvatarImage src="https://github.com/shadcn.png" width={45} height={45} alt={'Avatar'} />
       <AvatarFallback>RV</AvatarFallback>
     </Avatar>
   );
