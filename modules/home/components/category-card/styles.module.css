@@ -18,6 +18,10 @@
   color: #264092;
 }
 
+.container:hover :global(svg) {
+    color: #e79f00;
+}
+
 .container :global(.category-name) {
   color: #000;
   text-align: center;
