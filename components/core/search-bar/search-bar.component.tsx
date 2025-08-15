@@ -54,7 +54,6 @@ const SearchBar = ({ className, categories = [] }: Props) => {
 
   const handleSearch = useCallback(() => {
     const query = text ? `?q=${encodeURIComponent(text)}` : '';
-    console.log('query', ' =>', query);
     push(`/catalog/${selectedOption.value}${query}`);
   }, [push, text, selectedOption]);
 

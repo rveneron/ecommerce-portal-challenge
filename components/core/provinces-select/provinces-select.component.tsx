@@ -48,7 +48,11 @@ export default function ProvincesResponsiveSelect() {
   return (
     <Drawer open={open} onOpenChange={setOpen}>
       <DrawerTrigger asChild>
-        <Button variant="ghost" className="max-w-[32px] justify-center px-1">
+        <Button
+          variant="ghost"
+          className="max-w-[32px] justify-center px-1"
+          aria-label={'Provincias'}
+        >
           <MapPin className={'min-h-[32px] min-w-[32px] text-primary'} />
         </Button>
       </DrawerTrigger>

@@ -21,6 +21,7 @@
 }
 
 .global-search-bar .right-button {
+  min-width: 50px;
   width: 50px;
   border-radius: 5px;
   box-shadow: none;
