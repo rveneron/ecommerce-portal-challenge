@@ -50,7 +50,7 @@ const ProductCard = ({ className, product, t, baseUrl = DEFAULT_ROUTE_BASE }: Pr
             {cents && <div className="cents">{cents}</div>}
           </div>
           <div className="title">{product.name}</div>
-          <ProductRating className={'mb-2'} />
+          <ProductRating className={'mb-2'} readOnly />
           <div className="flex w-full items-center justify-between">
             <ProductCounterInput />
             <AddCartButton />

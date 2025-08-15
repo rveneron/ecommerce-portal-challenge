@@ -1,5 +1,4 @@
 'use client';
-
 import * as React from 'react';
 import { useState } from 'react';
 
@@ -10,11 +9,18 @@ import { Drawer, DrawerContent, DrawerTrigger } from '@/components/ui/drawer';
 import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
 import { ChevronDown, MapPin } from 'lucide-react';
 import { provinces } from '@/data/provinces';
+import { useIsClient } from '@/hooks/use-is-client';
 
-export function ProvincesResponsiveSelect() {
+export default function ProvincesResponsiveSelect() {
   const [open, setOpen] = useState(false);
   const isDesktop = useMediaQuery('(min-width: 1024px)');
   const [selectedProvince, setSelectedProvince] = useState<string | null>(provinces[2]);
+
+  const isClient = useIsClient();
+
+  if (!isClient) {
+    return null;
+  }
 
   if (isDesktop) {
     return (

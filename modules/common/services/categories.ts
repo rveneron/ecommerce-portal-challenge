@@ -1,11 +1,16 @@
-import { SearchParams } from '@/interfaces/search-body.interface';
-import { SearchResponse } from '@/interfaces/search-response.interface';
-import { ApiResponse } from '@/types/api.type';
-import { Category } from '@/types/category.type';
-import { categories } from '@/data/categories';
+import { CATEGORIES_KEY } from '@/constants/queries';
 
-export const getCategories = (
-  params: SearchParams = {}
-): Promise<ApiResponse<SearchResponse<Category>>> => {
-  return Promise.resolve({ data: { data: categories, total: categories.length } });
+const BASE_URL = process.env.NEXT_PUBLIC_APP_URL || 'https://botifarmastore.vercel.app';
+const revalidate = 7200; // Revalida cada 2 horas;
+
+export const getCategories = async () => {
+  const res = await fetch(`${BASE_URL}/api/categories`, {
+    next: { revalidate, tags: [CATEGORIES_KEY] }
+  });
+
+  if (!res.ok) {
+    throw new Error('Failed to fetch data');
+  }
+
+  return res.json();
 };
