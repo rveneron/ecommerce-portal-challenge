@@ -65,7 +65,7 @@ export default async function Home({ params }: Readonly<Props>) {
 
   return (
     <div className={'overflow-x-hidden pt-8'}>
-      <Gallery ads={mainAds?.data?.data || []} className={'page-width-container mb-[55px]'} />
+      <Gallery ads={mainAds || []} className={'page-width-container mb-[55px]'} />
       <PageWidthContainer className={'mb-[70px]'}>
         <CategoryList categories={categories || []} t={t} />
         <DrugStoreBanner t={t} className={'mt-[20px] xl:mt-[10px]'} />
