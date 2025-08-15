@@ -26,13 +26,17 @@
   font-weight: 400;
 }
 
-.container:hover {
-  background: #fff;
+.container :global(.category-image) {
+    transition: filter 0.5s ease;
+    filter: hue-rotate(0deg);
 }
 
-.container:hover :global(svg) {
-  color: #e79f00;
-  z-index: 2;
+.container:hover :global(.category-image) {
+    filter: hue-rotate(45deg);
+}
+
+.container:hover {
+  background: #fff;
 }
 
 .container:hover :global(.category-name) {

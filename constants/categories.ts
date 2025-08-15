@@ -6,6 +6,7 @@ export const categories: Category[] = [
     name: 'Vitaminas',
     description: 'Vitaminas',
     slug: 'vitaminas',
+    image: '/images/mockup/categories/vitaminas.webp',
     order: 1
   },
   {
@@ -13,6 +14,7 @@ export const categories: Category[] = [
     name: 'Analgésicos y antiinflamatorios',
     description: 'Analgésicos y antiinflamatorios',
     slug: 'analgesicos-antiflamatorios',
+    image: '/images/mockup/categories/analgesicos-antiflamatorios.webp',
     order: 2
   },
   {
@@ -20,6 +22,7 @@ export const categories: Category[] = [
     name: 'Antiinfecciosos',
     description: 'Antiinfecciosos',
     slug: 'antiinfecciosos',
+    image: '/images/mockup/categories/antiinfecciosos.webp',
     order: 3
   },
   {
@@ -27,6 +30,7 @@ export const categories: Category[] = [
     name: 'Mucolítico y antitusivos',
     description: 'Mucolítico y antitusivos',
     slug: 'mucolitico-antitusivo',
+    image: '/images/mockup/categories/mucolitico-antitusivo.webp',
     order: 4
   },
   {
@@ -34,6 +38,7 @@ export const categories: Category[] = [
     name: 'Antiulcerosos y antiácidos',
     description: 'Antiulcerosos y antiácidos',
     slug: 'antiulceroso-antiacido',
+    image: '/images/mockup/categories/antiulceroso-antiacido.webp',
     order: 5
   },
   {
@@ -41,6 +46,7 @@ export const categories: Category[] = [
     name: 'Antidiarreicos y laxantes',
     description: 'Antidiarreicos y laxantes',
     slug: 'antidiarreico-laxantes',
+    image: '/images/mockup/categories/antidiarreico-laxantes.webp',
     order: 6
   },
   {
@@ -48,6 +54,7 @@ export const categories: Category[] = [
     name: 'Antipiréticos',
     description: 'Antipiréticos',
     slug: 'antipireticos',
+    image: '/images/mockup/categories/antipireticos.webp',
     order: 7
   },
   {
@@ -55,6 +62,7 @@ export const categories: Category[] = [
     name: 'Antialérgicos',
     description: 'Antialérgicos',
     slug: 'antialergicos',
+    image: '/images/mockup/categories/antialergicos.webp',
     order: 8
   }
 ];
