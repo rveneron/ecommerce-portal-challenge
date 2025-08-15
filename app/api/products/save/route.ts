@@ -1,4 +1,5 @@
-import saveProducts from '@/constants/save-products.json';
+import { saveProducts } from '@/constants/products';
+
 export const dynamic = 'force-static';
 
 export async function GET() {

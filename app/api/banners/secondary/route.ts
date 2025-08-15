@@ -1,4 +1,4 @@
-import secondaryBanners from '@/constants/secondary-banners.json';
+import { secondaryBanners } from '@/constants/banners';
 
 export const dynamic = 'force-static';
 

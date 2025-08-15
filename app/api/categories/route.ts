@@ -1,4 +1,4 @@
-import categories from '@/constants/categories.json';
+import { categories } from '@/constants/categories';
 
 export const dynamic = 'force-static';
 

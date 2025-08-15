@@ -1,4 +1,4 @@
-import recentBanner from '@/constants/recent-banner.json';
+import { recentBanner } from '@/constants/banners';
 
 export const dynamic = 'force-static';
 

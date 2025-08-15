@@ -1,4 +1,5 @@
-import recommendedProducts from '@/constants/recommended-products.json';
+import { recommendedProducts } from '@/constants/products';
+
 export const dynamic = 'force-static';
 
 export async function GET() {
