@@ -2,7 +2,7 @@ import { ClassNameProps } from '@/types/classnames-props.type';
 
 type Props = ClassNameProps & {
   value?: number;
-  onChange?: (value: number) => void;
+  onChange?: (_value: number) => void;
 };
 
 import { MinusIcon, PlusIcon } from 'lucide-react';

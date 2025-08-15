@@ -2,7 +2,6 @@
 import * as React from 'react';
 import { memo, useCallback, useMemo, useState } from 'react';
 import './styles.css';
-import { provinces } from '@/data/provinces';
 import { useIsClient } from '@/hooks/use-is-client';
 import { CustomInput } from '@/components/ui/custom-input';
 import { cn } from '@/lib/utils';
@@ -45,10 +44,13 @@ const SearchBar = ({ className, categories = [] }: Props) => {
   const debounced = useDebounceCallback(setText, 50);
   const isClient = useIsClient();
 
-  const handleChange = (value: string) => {
-    const selected = options?.find((option) => option.value === value);
-    setSelectedOption(selected || options[0]);
-  };
+  const handleChange = useCallback(
+    (value: string) => {
+      const selected = options?.find((option) => option.value === value);
+      setSelectedOption(selected || options[0]);
+    },
+    [options]
+  );
 
   const handleSearch = useCallback(() => {
     const query = text ? `?q=${encodeURIComponent(text)}` : '';
@@ -65,7 +67,7 @@ const SearchBar = ({ className, categories = [] }: Props) => {
         onChange={handleChange}
       />
     ),
-    [className, options, selectedOption]
+    [handleChange, options, selectedOption]
   );
 
   const endAdornment = useMemo(
@@ -79,7 +81,7 @@ const SearchBar = ({ className, categories = [] }: Props) => {
         <SearchIcon />
       </Button>
     ),
-    [className, handleSearch]
+    [handleSearch]
   );
 
   if (!isClient) {
