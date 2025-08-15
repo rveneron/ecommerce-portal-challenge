@@ -1,7 +1,7 @@
 import PageWidthContainer from '@/components/core/layout/page-with-container';
 import AdsList from '@/modules/home/components/ads-list/ads-list.component';
 import Gallery from '@/modules/home/components/gallery/gallery.component';
-import { getMainAds, getRecentAd, getSecondaryAds } from '@/modules/common/services/ads';
+import { getMainBanners, getRecentBanner, getSecondaryBanners } from '@/modules/common/services/ads';
 import DrugStoreBanner from '@/modules/home/components/drug-store-banner/drug-store-banner.component';
 import initTranslations from '@/i18n';
 import SafeCarefullyBanner from '@/modules/home/components/safe-carefully-banner/safe-carefully-banner.component';
@@ -49,14 +49,14 @@ export default async function Home({ params }: Readonly<Props>) {
     saveProductsResponse,
     recentAdResponse
   ] = await Promise.all([
-    getMainAds(),
+    getMainBanners(),
     getCategories(),
-    getSecondaryAds(),
+    getSecondaryBanners(),
     getRecommendedProducts(),
     getMostSellProducts(),
     getRecentsProducts(),
     getSaveProducts(),
-    getRecentAd()
+    getRecentBanner()
   ]);
 
   return (
