@@ -31,7 +31,8 @@ const PUBLIC_APP_URL = process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000
 export const metadata: Metadata = {
   metadataBase: new URL(PUBLIC_APP_URL),
   title: 'Botifarma',
-  description: 'Botifarma Store',
+  description:
+    'Bienvenido a botifarma, tu tienda en línea especializada en medicamentos, productos de cuidado personal y soluciones de bienestar. Navega con confianza por nuestro catálogo cuidadosamente seleccionado, donde encontrarás desde tratamientos recetados hasta suplementos naturales, todo con la garantía de calidad y seguridad que mereces.',
   alternates: {
     canonical: new URL(PUBLIC_APP_URL),
     languages: {

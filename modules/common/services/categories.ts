@@ -1,16 +1,14 @@
-import { CATEGORIES_KEY } from '@/constants/queries';
-
-const BASE_URL = process.env.NEXT_PUBLIC_APP_URL || 'https://botifarmastore.vercel.app';
-const revalidate = 7200; // Revalida cada 2 horas;
+import { categories } from '@/constants/categories';
 
 export const getCategories = async () => {
-  const res = await fetch(`${BASE_URL}/api/categories`, {
-    next: { revalidate, tags: [CATEGORIES_KEY] }
+  const res = new Response(JSON.stringify(categories), {
+    status: 200,
+    headers: { 'Content-Type': 'application/json' }
   });
 
   if (!res.ok) {
     throw new Error('Failed to fetch data');
   }
 
-  return res.json();
+  return await res.json();
 };

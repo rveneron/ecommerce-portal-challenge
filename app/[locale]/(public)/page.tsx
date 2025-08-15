@@ -1,7 +1,11 @@
 import PageWidthContainer from '@/components/core/layout/page-with-container';
 import AdsList from '@/modules/home/components/ads-list/ads-list.component';
 import Gallery from '@/modules/home/components/gallery/gallery.component';
-import { getMainBanners, getRecentBanner, getSecondaryBanners } from '@/modules/common/services/ads';
+import {
+  getMainBanners,
+  getRecentBanner,
+  getSecondaryBanners
+} from '@/modules/common/services/ads';
 import DrugStoreBanner from '@/modules/home/components/drug-store-banner/drug-store-banner.component';
 import initTranslations from '@/i18n';
 import SafeCarefullyBanner from '@/modules/home/components/safe-carefully-banner/safe-carefully-banner.component';
@@ -40,14 +44,14 @@ export default async function Home({ params }: Readonly<Props>) {
   const { t } = await initTranslations(dynamicParams?.locale, i18nNamespaces);
 
   const [
-    mainAdsResponse,
-    categoriesResponse,
-    secondaryAdsResponse,
-    recommendedProductsResponse,
-    mostSellProductsResponse,
-    recentsProductsResponse,
-    saveProductsResponse,
-    recentAdResponse
+    mainAds,
+    categories,
+    secondaryAds,
+    recommendedProducts,
+    mostSellProducts,
+    recentsProducts,
+    saveProducts,
+    recentAd
   ] = await Promise.all([
     getMainBanners(),
     getCategories(),
@@ -58,15 +62,12 @@ export default async function Home({ params }: Readonly<Props>) {
     getSaveProducts(),
     getRecentBanner()
   ]);
-  
+
   return (
     <div className={'overflow-x-hidden pt-8'}>
-      <Gallery
-        ads={mainAdsResponse?.data?.data || []}
-        className={'page-width-container mb-[55px]'}
-      />
+      <Gallery ads={mainAds?.data?.data || []} className={'page-width-container mb-[55px]'} />
       <PageWidthContainer className={'mb-[70px]'}>
-        <CategoryList categories={categoriesResponse?.data || []} t={t} />
+        <CategoryList categories={categories || []} t={t} />
         <DrugStoreBanner t={t} className={'mt-[20px] xl:mt-[10px]'} />
       </PageWidthContainer>
       <Suspense
@@ -75,33 +76,29 @@ export default async function Home({ params }: Readonly<Props>) {
         }
       >
         <RecommendedProductSection
-          products={recommendedProductsResponse?.data || []}
+          products={recommendedProducts || []}
           className={'page-width-container mb-[70px]'}
           t={t}
         />
       </Suspense>
       <PageWidthContainer className={'mb-[70px]'}>
-        <AdsList ads={secondaryAdsResponse?.data || []} className={'mb-[70px]'} />
+        <AdsList ads={secondaryAds || []} className={'mb-[70px]'} />
       </PageWidthContainer>
       <PageWidthContainer className={'mb-[70px] px-0'}>
         <Suspense fallback={<MostSellList t={t} isLoading />}>
-          <MostSellList t={t} products={mostSellProductsResponse?.data || []} />
+          <MostSellList t={t} products={mostSellProducts || []} />
         </Suspense>
       </PageWidthContainer>
       <NeedsSection t={t} className={'mb-[70px]'} />
       <PageWidthContainer className={'mb-[70px]'}>
-        <RecentProductSection
-          t={t}
-          products={recentsProductsResponse?.data || []}
-          banner={recentAdResponse?.data}
-        />
+        <RecentProductSection t={t} products={recentsProducts || []} banner={recentAd} />
       </PageWidthContainer>
       <PageWidthContainer className={'max-sm:px-0'}>
         <SafeCarefullyBanner
           className={'mx-[20px] mb-[200px] sm:mx-0 xl:mb-[70px]'}
           t={t}
-          discount={'-20%'}
-          products={saveProductsResponse?.data || []}
+          discount={'-50%'}
+          products={saveProducts || []}
         />
         <OnePlaceSection t={t} />
       </PageWidthContainer>

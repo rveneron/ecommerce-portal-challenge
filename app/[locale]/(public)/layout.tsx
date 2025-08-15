@@ -12,7 +12,8 @@ export const dynamic = 'force-static';
 
 export const metadata: Metadata = {
   title: 'Botifarma',
-  description: 'Botifarma',
+  description:
+    'Bienvenido a botifarma, tu tienda en línea especializada en medicamentos, productos de cuidado personal y soluciones de bienestar. Navega con confianza por nuestro catálogo cuidadosamente seleccionado, donde encontrarás desde tratamientos recetados hasta suplementos naturales, todo con la garantía de calidad y seguridad que mereces.',
   robots: {
     index: true,
     follow: true,
@@ -40,7 +41,7 @@ export default async function RootLayout({ children, params }: Readonly<Props>) 
   const dynamicParams = await params;
   const { resources, t } = await initTranslations(dynamicParams?.locale, i18nNamespaces);
 
-  const [categoriesResponse] = await Promise.all([getCategories()]);
+  const [categories] = await Promise.all([getCategories()]);
 
   return (
     <main className="relative">
@@ -49,7 +50,7 @@ export default async function RootLayout({ children, params }: Readonly<Props>) 
         locale={dynamicParams?.locale}
         resources={resources}
       >
-        <Navbar t={t} categories={categoriesResponse?.data || []} />
+        <Navbar t={t} categories={categories || []} />
         {children}
         <Footer t={t} />
       </TranslationsProvider>
