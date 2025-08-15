@@ -59,8 +59,6 @@ export default async function Home({ params }: Readonly<Props>) {
     getRecentBanner()
   ]);
   
-  console.log('recentsProductsResponse', ' <=>', recentsProductsResponse);
-
   return (
     <div className={'overflow-x-hidden pt-8'}>
       <Gallery

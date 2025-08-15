@@ -1,9 +1,8 @@
 'use client';
-import React, { type MouseEvent, useCallback, useMemo, useState } from 'react';
+import React, { useCallback, useMemo, useState } from 'react';
 import { ClassNameProps } from '@/types/classnames-props.type';
 import { cn } from '@/lib/utils';
-import { HeartPlusIcon, HeartMinusIcon } from 'lucide-react';
-import { Button } from '@/components/ui/button';
+import { HeartIcon } from 'lucide-react';
 import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/ui/tooltip';
 import { useTranslation } from 'react-i18next';
 
@@ -19,8 +18,6 @@ const ProductFavButton = ({ className }: Props) => {
     setFav((prev) => !prev);
   }, []);
 
-  const Icon = useMemo(() => (fav ? HeartMinusIcon : HeartPlusIcon), [fav]);
-
   return (
     <Tooltip>
       <TooltipTrigger asChild>
@@ -33,7 +30,12 @@ const ProductFavButton = ({ className }: Props) => {
           )}
           onClick={handleClick}
         >
-          <Icon className={'h-[22px] w-[22px]'} />
+          <HeartIcon
+            className={cn(
+              'h-[22px] w-[22px]',
+              fav ? 'fill-[#e79f00] text-transparent' : 'fill-transparent text-[##3D3D3D]'
+            )}
+          />
         </div>
       </TooltipTrigger>
       <TooltipContent>
