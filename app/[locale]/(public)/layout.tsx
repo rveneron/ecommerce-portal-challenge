@@ -6,6 +6,7 @@ import TranslationsProvider from '@/context/translation-provider';
 import Navbar from '@/modules/common/components/navbar/navbar.component';
 import Footer from '@/modules/common/components/footer/footer.component';
 import i18nConfig from '@/i18nConfig';
+import { getCategories } from '@/modules/common/services/categories';
 
 export const dynamic = 'force-static';
 
@@ -39,6 +40,8 @@ export default async function RootLayout({ children, params }: Readonly<Props>) 
   const dynamicParams = await params;
   const { resources, t } = await initTranslations(dynamicParams?.locale, i18nNamespaces);
 
+  const [categoriesResponse] = await Promise.all([getCategories()]);
+
   return (
     <main className="relative">
       <TranslationsProvider
@@ -46,7 +49,7 @@ export default async function RootLayout({ children, params }: Readonly<Props>) 
         locale={dynamicParams?.locale}
         resources={resources}
       >
-        <Navbar t={t} />
+        <Navbar t={t} categories={categoriesResponse?.data || []} />
         {children}
         <Footer t={t} />
       </TranslationsProvider>

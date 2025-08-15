@@ -11,21 +11,19 @@ export interface Props extends React.ComponentProps<'input'> {
 const CustomInput = React.forwardRef<HTMLInputElement, Props>(
   ({ className, type, label, helperText, startAdornment, endAdornment, ...props }, ref) => {
     return (
-      <div className="flex flex-col">
+      <div className={cn('flex flex-col', className)}>
         {label && <label className="mb-1 text-sm text-[#676767]">{label}</label>}
         <div
           className={cn(
-            'flex h-10 w-full items-center rounded-md border border-input bg-background text-sm ring-offset-background disabled:cursor-not-allowed disabled:opacity-50',
-            className
+            'flex h-full w-full items-center rounded-md border border-input bg-background text-sm ring-offset-background disabled:cursor-not-allowed disabled:opacity-50'
           )}
         >
           {startAdornment}
           <input
             type={type}
-            className={cn(
-              'flex-1 p-2 placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 disabled:opacity-50',
-              'input'
-            )}
+            className={
+              'input flex-1 p-2 placeholder:text-muted-foreground focus:outline-none disabled:opacity-50'
+            }
             ref={ref}
             {...props}
           />

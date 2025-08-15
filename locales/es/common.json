@@ -29,7 +29,9 @@
     "actions": "Agregar al carrito"
   },
   "categorySection": {
-    "title": "Obtén todo, justo aquí"
+    "title": "Obtén todo, justo aquí",
+    "all": "Categorías",
+    "findByCategories": "Buscar por categorías"
   },
   "recommendedProductsSection": {
     "title": "Recomendado para tí"

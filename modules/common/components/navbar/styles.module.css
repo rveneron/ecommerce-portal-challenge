@@ -3,12 +3,13 @@
   background: #fff;
   box-shadow: 0 4px 4px rgba(167, 195, 236, 0.25);
   padding: 0;
+  @apply flex flex-col items-stretch justify-stretch;
 }
 
 .container :global(.header) {
-  min-height: 100px;
+  min-height: 80px;
   background: #fff;
-  @apply flex items-center justify-between gap-0;
+  @apply flex items-center justify-between gap-0 flex-1;
 }
 
 .container :global(.username) {

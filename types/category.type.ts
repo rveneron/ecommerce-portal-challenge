@@ -3,5 +3,5 @@ export type Category = {
   description?: string;
   order: number;
   slug: string;
-  _id: string;
+  _id?: string;
 };
