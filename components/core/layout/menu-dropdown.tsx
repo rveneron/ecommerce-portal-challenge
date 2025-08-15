@@ -28,11 +28,11 @@ const MenuDropDown = ({ className, t }: Props) => {
     <div className={cn('lg:hidden', className)}>
       <DropdownMenu>
         <DropdownMenuTrigger asChild>
-          <Button variant="ghost" size="icon" className="size-12">
+          <Button variant="ghost" size="icon" className="size-12" aria-label="Menu">
             <MenuIcon className={'text-primary'} />
           </Button>
         </DropdownMenuTrigger>
-        <DropdownMenuContent className="w-56 app-responsive-menu" align="start">
+        <DropdownMenuContent className="app-responsive-menu w-56" align="start">
           {mainMenu.map((item) => (
             <Link href={item.url} key={item.name}>
               <DropdownMenuItem>{t(item.name)}</DropdownMenuItem>

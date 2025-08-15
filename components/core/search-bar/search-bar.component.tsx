@@ -73,6 +73,7 @@ const SearchBar = ({ className, categories = [] }: Props) => {
   const endAdornment = useMemo(
     () => (
       <Button
+        aria-label={'Buscar'}
         variant={'contained'}
         color={'primary'}
         className={'right-button'}

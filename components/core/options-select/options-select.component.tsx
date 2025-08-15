@@ -64,6 +64,7 @@ const OptionsResponsiveSelect = ({ className, options, value }: Props) => {
     <Drawer open={open} onOpenChange={setOpen}>
       <DrawerTrigger asChild className={className}>
         <Button
+          aria-label={'Opciones'}
           variant="contained"
           color={'primary'}
           className="min-w-[50px] justify-center rounded-[5px] px-1"
