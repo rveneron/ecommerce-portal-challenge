@@ -58,6 +58,8 @@ export default async function Home({ params }: Readonly<Props>) {
     getSaveProducts(),
     getRecentBanner()
   ]);
+  
+  console.log('recentsProductsResponse', ' <=>', recentsProductsResponse);
 
   return (
     <div className={'overflow-x-hidden pt-8'}>
@@ -66,7 +68,7 @@ export default async function Home({ params }: Readonly<Props>) {
         className={'page-width-container mb-[55px]'}
       />
       <PageWidthContainer className={'mb-[70px]'}>
-        <CategoryList categories={categoriesResponse?.data?.data || []} t={t} />
+        <CategoryList categories={categoriesResponse?.data || []} t={t} />
         <DrugStoreBanner t={t} className={'mt-[20px] xl:mt-[10px]'} />
       </PageWidthContainer>
       <Suspense
@@ -75,24 +77,24 @@ export default async function Home({ params }: Readonly<Props>) {
         }
       >
         <RecommendedProductSection
-          products={recommendedProductsResponse?.data?.data || []}
+          products={recommendedProductsResponse?.data || []}
           className={'page-width-container mb-[70px]'}
           t={t}
         />
       </Suspense>
       <PageWidthContainer className={'mb-[70px]'}>
-        <AdsList ads={secondaryAdsResponse?.data?.data || []} className={'mb-[70px]'} />
+        <AdsList ads={secondaryAdsResponse?.data || []} className={'mb-[70px]'} />
       </PageWidthContainer>
       <PageWidthContainer className={'mb-[70px] px-0'}>
         <Suspense fallback={<MostSellList t={t} isLoading />}>
-          <MostSellList t={t} products={mostSellProductsResponse?.data?.data || []} />
+          <MostSellList t={t} products={mostSellProductsResponse?.data || []} />
         </Suspense>
       </PageWidthContainer>
       <NeedsSection t={t} className={'mb-[70px]'} />
       <PageWidthContainer className={'mb-[70px]'}>
         <RecentProductSection
           t={t}
-          products={recentsProductsResponse?.data?.data || []}
+          products={recentsProductsResponse?.data || []}
           banner={recentAdResponse?.data}
         />
       </PageWidthContainer>
@@ -101,7 +103,7 @@ export default async function Home({ params }: Readonly<Props>) {
           className={'mx-[20px] mb-[200px] sm:mx-0 xl:mb-[70px]'}
           t={t}
           discount={'-20%'}
-          products={saveProductsResponse?.data?.data || []}
+          products={saveProductsResponse?.data || []}
         />
         <OnePlaceSection t={t} />
       </PageWidthContainer>

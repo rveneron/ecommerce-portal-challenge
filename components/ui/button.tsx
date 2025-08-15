@@ -157,8 +157,9 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       >
         <div
           className={cn(
-            'flex w-full flex-1 flex-row items-center justify-between',
+            'flex w-full flex-1 flex-row items-center',
             size === 'icon' ? 'gap-0' : 'gap-2',
+            icon ? 'justify-between' : 'justify-center',
             iconPositionClass
           )}
         >

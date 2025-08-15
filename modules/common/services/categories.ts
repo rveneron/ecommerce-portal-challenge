@@ -12,5 +12,5 @@ export const getCategories = async () => {
     throw new Error('Failed to fetch data');
   }
 
-  return Response.json(res.json());
+  return res.json();
 };

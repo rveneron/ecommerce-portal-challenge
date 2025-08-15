@@ -17,7 +17,7 @@ export const getSaveProducts = async () => {
     throw new Error('Failed to fetch data');
   }
 
-  return Response.json(res.json());
+  return res.json();
 };
 
 export const getRecommendedProducts = async () => {
@@ -29,7 +29,7 @@ export const getRecommendedProducts = async () => {
     throw new Error('Failed to fetch data');
   }
 
-  return Response.json(res.json());
+  return res.json();
 };
 
 export const getMostSellProducts = async () => {
@@ -41,7 +41,7 @@ export const getMostSellProducts = async () => {
     throw new Error('Failed to fetch data');
   }
 
-  return Response.json(res.json());
+  return res.json();
 };
 
 export const getRecentsProducts = async () => {
@@ -53,5 +53,5 @@ export const getRecentsProducts = async () => {
     throw new Error('Failed to fetch data');
   }
 
-  return Response.json(res.json());
+  return res.json();
 };

@@ -12,7 +12,7 @@ export const getMainBanners = async () => {
     throw new Error('Failed to fetch data');
   }
 
-  return Response.json(res.json());
+  return await res.json();
 };
 
 export const getRecentBanner = async () => {
@@ -24,7 +24,7 @@ export const getRecentBanner = async () => {
     throw new Error('Failed to fetch data');
   }
 
-  return Response.json(res.json());
+  return res.json();
 };
 
 export const getSecondaryBanners = async () => {
@@ -36,5 +36,5 @@ export const getSecondaryBanners = async () => {
     throw new Error('Failed to fetch data');
   }
 
-  return Response.json(res.json());
+  return res.json();
 };

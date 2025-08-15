@@ -8,7 +8,7 @@ import { TProps } from '@/types/t-props.type';
 import PageWidthContainer from '@/components/core/layout/page-with-container';
 import ProfileDropDown from '@/components/core/layout/profile-dropdown';
 import MenuDropDown from '@/components/core/layout/menu-dropdown';
-import { ProvincesResponsiveSelect } from '@/components/core/provinces-select/provinces-select.component';
+import ProvincesResponsiveSelect from '@/components/core/provinces-select/provinces-select.component';
 
 type Props = ClassNameProps & TProps;
 
