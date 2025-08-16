@@ -14,7 +14,7 @@ type Props = {
   params: Promise<{ locale: string; slug: string }>;
 };
 
-export async function generateMetadata(
+/*export async function generateMetadata(
   { params }: Props,
   parent: ResolvingMetadata
 ): Promise<Metadata> {
@@ -42,7 +42,7 @@ export async function generateMetadata(
       type: 'website'
     }
   };
-}
+}*/
 
 export async function generateStaticParams() {
   //Generar páginas estáticas para los productos más vendidos
