@@ -3,8 +3,8 @@
   border-radius: 6px;
   border: 1px solid #ffedd5;
   background: #f9e2bf;
-  min-height: 188px;
-  max-height: 188px;
+  min-height: 210px;
+  max-height: 210px;
 }
 
 .container :global(.safe-carefully-data) {
@@ -51,8 +51,15 @@
 }
 
 .container :global(.embla) {
-    transform: translateY(20px);
-    overflow-x: hidden;
+  transform: translateY(20px);
+  overflow-x: hidden;
+}
+
+@media (min-width: 400px) {
+  .container {
+    min-height: 188px;
+    max-height: 188px;
+  }
 }
 
 @media (min-width: 760px) {

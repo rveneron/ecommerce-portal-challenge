@@ -90,7 +90,7 @@ export default async function Home({ params }: Readonly<Props>) {
         </Suspense>
       </PageWidthContainer>
       <NeedsSection t={t} className={'mb-[70px]'} />
-      <PageWidthContainer className={'mb-[70px]'}>
+      <PageWidthContainer className={'mb-[20px]'}>
         <RecentProductSection t={t} products={recentsProducts || []} banner={recentAd} />
       </PageWidthContainer>
       <PageWidthContainer className={'max-sm:px-0'}>

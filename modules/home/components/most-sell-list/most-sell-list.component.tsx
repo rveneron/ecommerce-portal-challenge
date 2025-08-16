@@ -17,8 +17,10 @@ type Props = ClassNameProps &
 
 const MostSellList = ({ className, products = [], t, isLoading }: Props) => {
   const Wrapper = ({ children }: ChildrenListProps) => (
-    <div className={cn(styles.container, className)}>
-      <div className="product-section-title">{t('common:mostSellProductsSection.title')}</div>
+    <div className={cn(styles.container, 'max-md:mx-0 max-md:px-0', className)}>
+      <div className="product-section-title max-md:px-5">
+        {t('common:mostSellProductsSection.title')}
+      </div>
       <Carousel slides={children} />
     </div>
   );

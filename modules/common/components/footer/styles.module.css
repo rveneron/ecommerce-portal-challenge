@@ -43,6 +43,8 @@
 .container :global(.email-input .send-button) {
   background: #e79f00;
   border-radius: 0 30px 30px 0;
+  padding: 8px 16px;
+  @apply text-center;
 }
 
 .container :global(.terms) {

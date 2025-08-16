@@ -327,42 +327,6 @@ export const recentProducts: IProduct[] = [
       count: 40
     },
     createdAt: '2025-05-08T00:00:00.000Z'
-  },
-  {
-    _id: '1eb3b567-5bf6-4c5c-a0a6-ba9e8cc7341a',
-    name: 'Diflox',
-    slug: 'diflox',
-    description: 'Lorem ipsum dolor sit...',
-    price: 20,
-    image: {
-      url: '/images/mockup/products/card/diflox.webp',
-      thumb: '/images/mockup/products/card/diflox.webp',
-      width: 276,
-      height: 240
-    },
-    rate: {
-      rate: 5,
-      count: 40
-    },
-    createdAt: '2025-05-01T00:00:00.000Z'
-  },
-  {
-    _id: 'ca74a9fd-8229-467b-884a-df1ca36e7398',
-    name: 'Analgan Rapid Paracetamol',
-    slug: 'analgan-rapid-paracetamol',
-    description: 'Lorem ipsum dolor sit...',
-    price: 20,
-    image: {
-      url: '/images/mockup/products/card/analgan-rapid-paracetamol.webp',
-      thumb: '/images/mockup/products/card/analgan-rapid-paracetamol.webp',
-      width: 276,
-      height: 240
-    },
-    rate: {
-      rate: 5,
-      count: 40
-    },
-    createdAt: '2025-01-20T00:00:00.000Z'
   }
 ];
 

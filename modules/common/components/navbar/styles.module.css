@@ -3,7 +3,8 @@
   background: #fff;
   box-shadow: 0 4px 4px rgba(167, 195, 236, 0.25);
   padding: 0;
-  @apply flex flex-col items-stretch justify-stretch;
+  @apply flex flex-col items-stretch justify-stretch sticky top-0;
+    z-index: 9999;
 }
 
 .container :global(.header) {
