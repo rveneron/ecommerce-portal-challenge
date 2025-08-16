@@ -9,12 +9,13 @@ import { IProduct } from '@/interfaces/product';
 import { Metadata, ResolvingMetadata } from 'next';
 import { getImageAbsolutePath } from '@/utils/image';
 import ProductsDetailsContainer from '@/modules/product/containers/product-details/product-details.container';
+import { PUBLIC_APP_URL } from '@/constants';
 
 type Props = {
   params: Promise<{ locale: string; slug: string }>;
 };
 
-/*export async function generateMetadata(
+export async function generateMetadata(
   { params }: Props,
   parent: ResolvingMetadata
 ): Promise<Metadata> {
@@ -26,9 +27,9 @@ type Props = {
   return {
     title: product.name,
     description: product.description,
-    keywords: product?.slug,
+    keywords: slug,
     alternates: {
-      canonical: new URL(`${process.env.NEXT_PUBLIC_APP_URL}/${locale}/product/${slug}`),
+      canonical: new URL(`${PUBLIC_APP_URL}/${locale}/product/${slug}`),
       languages: {
         'es-ES': '/es-ES'
       }
@@ -42,7 +43,7 @@ type Props = {
       type: 'website'
     }
   };
-}*/
+}
 
 export async function generateStaticParams() {
   //Generar páginas estáticas para los productos más vendidos

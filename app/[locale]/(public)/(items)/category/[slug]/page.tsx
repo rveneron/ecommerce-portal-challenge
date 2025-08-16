@@ -5,26 +5,27 @@ import { getCategories, getCategoryBySlug } from '@/modules/common/services/cate
 import { getImageAbsolutePath } from '@/utils/image';
 import CategoryDetailsContainer from '@/modules/category/containers/category-details/category-details.container';
 import { getProductsByCategory } from '@/modules/common/services/products';
+import { PUBLIC_APP_URL } from '@/constants';
 
 type Props = {
   params: Promise<{ locale: string; slug: string }>;
 };
 
-/*export async function generateMetadata(
+export async function generateMetadata(
   { params }: Props,
   parent: ResolvingMetadata
 ): Promise<Metadata> {
   const { locale, slug } = await params;
 
   const category = await getCategoryBySlug(slug);
-  const previousImages = (await parent).openGraph?.images || [];
+  const previousImages = (await parent)?.openGraph?.images || [];
 
   return {
     title: category.name,
     description: category.description,
-    keywords: category?.slug,
+    keywords: slug,
     alternates: {
-      canonical: new URL(`${process.env.NEXT_PUBLIC_APP_URL}/${locale}/category/${slug}`),
+      canonical: new URL(`${PUBLIC_APP_URL}/${locale}/category/${slug}`),
       languages: {
         'es-ES': '/es-ES'
       }
@@ -36,7 +37,7 @@ type Props = {
       type: 'website'
     }
   };
-}*/
+}
 
 export async function generateStaticParams() {
   //Generar páginas estáticas para todas las categorías
