@@ -29,7 +29,7 @@ export default function ProvincesResponsiveSelect() {
           <Button
             variant="ghost"
             aria-label={'Provincias'}
-            className="p-x-3 p-y-1 flex h-[47px] min-w-[240px] items-center justify-start gap-1 bg-[#E6E9EE] text-[#1E1E1E]"
+            className="p-x-3 p-y-1 flex h-[50px] min-w-[240px] items-center justify-start gap-1 bg-[#E6E9EE] text-[#1E1E1E]"
             icon={<ChevronDown className={'ml-2 h-[16px] w-[16px] text-primary'} />}
           >
             <MapPin className={'mr-2 min-h-[24px] min-w-[24px] text-primary'} />

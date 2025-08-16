@@ -1,4 +1,6 @@
 {
+  "similarProducts": "Productos similares",
+  "ad": "Publicidad",
   "new": "Nuevo",
   "send": "Enviar",
   "email": "Correo electrónico",
@@ -31,6 +33,7 @@
   "categorySection": {
     "title": "Obtén todo, justo aquí",
     "all": "Categorías",
+    "products": "Productos",
     "findByCategories": "Buscar por categorías"
   },
   "recommendedProductsSection": {

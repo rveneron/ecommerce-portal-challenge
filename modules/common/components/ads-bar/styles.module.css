@@ -1,0 +1,20 @@
+.container {
+  min-height: 250px;
+  max-height: 250px;
+  @apply flex w-full flex-row items-center justify-center gap-4 bg-[#e6e9ee] p-8;
+}
+
+.container :global(.ads-title) {
+  @apply w-full text-center text-xl font-semibold;
+  color: darkgray;
+}
+
+@media (min-width: 1280px) {
+  .container {
+    min-width: 250px;
+    max-width: 250px;
+    height: 100%;
+    max-height: 800px;
+    @apply flex-col items-start;
+  }
+}

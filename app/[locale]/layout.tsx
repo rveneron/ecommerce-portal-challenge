@@ -9,6 +9,7 @@ import i18nConfig from '@/i18nConfig';
 import { dir } from 'i18next';
 import { notFound } from 'next/navigation';
 import NextTopLoader from 'nextjs-toploader';
+import { PUBLIC_APP_URL } from '@/constants';
 
 const inter = Inter({
   weight: ['300', '400', '500', '600', '700'],
@@ -25,8 +26,6 @@ const monserrat = Montserrat({
   subsets: ['latin'],
   display: 'swap'
 });
-
-const PUBLIC_APP_URL = process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000';
 
 export const metadata: Metadata = {
   metadataBase: new URL(PUBLIC_APP_URL),
@@ -56,8 +55,6 @@ export function generateStaticParams(_params: unknown) {
     locale
   }));
 }
-
-const i18nNamespaces = ['common', 'errors'];
 
 export default async function RootLayout({
   children,

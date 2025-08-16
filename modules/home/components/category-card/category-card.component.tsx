@@ -4,6 +4,7 @@ import styles from './styles.module.css';
 import { ClassNameProps } from '@/types/classnames-props.type';
 import { Category } from '@/types/category.type';
 import { getCategoryIcon } from '@/modules/home/utils/category';
+import Link from 'next/link';
 
 type Props = ClassNameProps & {
   category: Category;
@@ -11,11 +12,13 @@ type Props = ClassNameProps & {
 
 const CategoryCard = ({ className, category }: Props) => {
   return (
-    <div className={cn(styles.container, className)}>
-      <div className="semicircle"></div>
-      {getCategoryIcon(category)}
-      <div className={'category-name'}>{category.name}</div>
-    </div>
+    <Link href={`/category/${category.slug}`}>
+      <div className={cn(styles.container, className)}>
+        <div className="semicircle"></div>
+        {getCategoryIcon(category)}
+        <div className={'category-name'}>{category.name}</div>
+      </div>
+    </Link>
   );
 };
 

@@ -44,14 +44,14 @@ export default async function RootLayout({ children, params }: Readonly<Props>) 
   const [categories] = await Promise.all([getCategories()]);
 
   return (
-    <main className="relative">
+    <main className="relative flex min-h-screen flex-col justify-between">
       <TranslationsProvider
         namespaces={i18nNamespaces}
         locale={dynamicParams?.locale}
         resources={resources}
       >
         <Navbar t={t} categories={categories || []} />
-        {children}
+        <div className="relative flex-1">{children}</div>
         <Footer t={t} />
       </TranslationsProvider>
     </main>

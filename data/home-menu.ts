@@ -5,6 +5,10 @@ type Menu = {
 
 export const mainMenu: Menu[] = [
   {
+    name: 'menu:menu.home',
+    url: '/'
+  },
+  {
     name: 'menu:menu.catalog',
     url: '/catalog'
   },

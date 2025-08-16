@@ -15,6 +15,7 @@ import { Category } from '@/types/category.type';
 import { useTranslation } from 'react-i18next';
 import { useRouter } from 'next/navigation';
 import { useDebounceCallback } from '@/hooks/use-debounce-callback';
+import { FALL_BACK_IMAGE } from '@/constants';
 
 type Props = ClassNameProps & {
   categories: Category[];
@@ -29,7 +30,15 @@ const SearchBar = ({ className, categories = [] }: Props) => {
       {
         name: t('categorySection.all'),
         slug: '',
-        order: 0
+        order: 0,
+        image: {
+          url: FALL_BACK_IMAGE,
+          thumb: FALL_BACK_IMAGE,
+          width: 60,
+          height: 60
+        },
+        description: '',
+        content: ''
       },
       ...categories
     ];

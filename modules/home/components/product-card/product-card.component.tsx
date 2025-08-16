@@ -21,7 +21,7 @@ type Props = ClassNameProps &
 
 const NEW_DAYS = 7;
 
-const DEFAULT_ROUTE_BASE = '/products';
+const DEFAULT_ROUTE_BASE = '/product';
 
 const ProductCard = ({ className, product, t, baseUrl = DEFAULT_ROUTE_BASE }: Props) => {
   const [amount, cents] = product?.price?.toFixed(2)?.split('.') || [];
