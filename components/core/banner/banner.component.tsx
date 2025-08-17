@@ -76,6 +76,7 @@ const Banner = ({
           width={banner?.desktop ? banner?.desktop?.width : banner?.mobile?.width}
           height={banner?.desktop ? banner?.desktop?.height : banner?.mobile?.height}
           className={cn(banner?.desktop?.url ? desktopClassName : mobileClassName)}
+          priority={priority}
         />
       </WrapperComponent>
     );

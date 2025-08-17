@@ -45,12 +45,14 @@ const Gallery = ({ className, ads, loading = 'eager', priority = true }: Props) 
           banner={ads?.[1] || emptyAd}
           desktopClassName={'desktop-banner'}
           mobileClassName={'mobile-banner'}
+          priority={priority}
           loading={loading}
         />
         <Banner
           banner={ads?.[2] || emptyAd}
           desktopClassName={'desktop-banner'}
           mobileClassName={'mobile-banner'}
+          priority={priority}
           loading={loading}
         />
       </div>
