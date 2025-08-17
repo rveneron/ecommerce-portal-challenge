@@ -303,8 +303,8 @@ export const allProducts: IProduct[] = [
 </section>`,
     price: 25.5,
     image: {
-      url: '/images/mockup/products/card/gerber-gom-mast.webp',
-      thumb: '/images/mockup/products/card/gerber-gom-mast.webp',
+      url: '/images/mockup/products/card/gerber-gom.webp',
+      thumb: '/images/mockup/products/card/gerber-gom.webp',
       width: 276,
       height: 240
     },
@@ -773,9 +773,9 @@ export const allProducts: IProduct[] = [
   }
 ];
 
-export const mostSellProducts: IProduct[] = allProducts.slice(0, 10);
+export const mostSellProducts: IProduct[] = [...allProducts.slice(5, 10), ...allProducts.slice(0, 5)];
 
-export const recentProducts: IProduct[] = allProducts.slice(0, 8);
+export const recentProducts: IProduct[] = [...allProducts.slice(5, 9), ...allProducts.slice(0, 4)];
 
 export const recommendedProducts: IProduct[] = allProducts.slice(0, 10);
 
